@@ -2,17 +2,17 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:zad/asceticism_flakes_screen/aseceticism_flakes.dart';
-import 'package:zad/contemporary%20_islamic_%20issues/contemporary%20_islamic_%20issues.dart';
-import 'package:zad/education_%20muslim%20family_screen/education_muslim_screen.dart';
-import 'package:zad/history_stories_screen/history_stories_screen.dart';
-import 'package:zad/islamic_faith_screen/islamic_faith_screen.dart';
-import 'package:zad/jurisprudence_screen/juispudence_screen.dart';
-import 'package:zad/literature%20_ethics_screen/literature_ethics_screen.dart';
-import 'package:zad/periodic%20_events_screen/periodic_event_screen.dart';
-import 'package:zad/seasons%20_%20goodness_screen/seasons_goodness_screen.dart';
-import 'package:zad/sections_screen/zad_states.dart';
-import 'package:zad/various_subjects_screen/various_subject_screen.dart';
+import '../asceticism_flakes_screen/aseceticism_flakes.dart';
+import '../contemporary%20_islamic_%20issues/contemporary%20_islamic_%20issues.dart';
+import '../education_%20muslim%20family_screen/education_muslim_screen.dart';
+import '../history_stories_screen/history_stories_screen.dart';
+import '../islamic_faith_screen/islamic_faith_screen.dart';
+import '../jurisprudence_screen/juispudence_screen.dart';
+import '../literature%20_ethics_screen/literature_ethics_screen.dart';
+import '../periodic%20_events_screen/periodic_event_screen.dart';
+import '../seasons%20_%20goodness_screen/seasons_goodness_screen.dart';
+import '../sections_screen/zad_states.dart';
+import '../various_subjects_screen/various_subject_screen.dart';
 
 class ZadCubit extends Cubit<ZadStates> {
   ZadCubit() : super(ZadInitialState());

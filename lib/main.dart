@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:zad/sections_screen/sections_screen.dart';
+import 'package:zad/screens/sections_screen/sections_screen.dart';
 
 void main() {
   runApp(const MyApp());

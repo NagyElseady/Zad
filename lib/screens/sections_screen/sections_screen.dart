@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:zad/sections_screen/section_cubit.dart';
-import 'package:zad/sections_screen/zad_states.dart';
+import '../sections_screen/section_cubit.dart';
+import '../sections_screen/zad_states.dart';
 
 import '../asceticism_flakes_screen/aseceticism_flakes.dart';
 import '../components.dart';
@@ -17,7 +17,6 @@ import '../various_subjects_screen/various_subject_screen.dart';
 
 class SectionsScreen extends StatelessWidget {
   const SectionsScreen({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
@@ -39,7 +38,7 @@ class SectionsScreen extends StatelessWidget {
                             ),
                           ),
                         ],
-                        title: const Text('الاقسام'),
+                        title: const Text('الأقسام'),
                       ),
                       body: SingleChildScrollView(
                         child: Container(
@@ -602,4 +601,59 @@ class SectionsScreen extends StatelessWidget {
               );
             }));
   }
+
+  // TODO: Reuse this widget in all cells
+  Widget cellView(
+      BuildContext context, String title, IconData icon, Color color) {
+    return Container(
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(
+        10.0,
+      )),
+      clipBehavior: Clip.antiAliasWithSaveLayer,
+      width: 180.0,
+      child: Stack(
+        alignment: AlignmentDirectional.bottomEnd,
+        children: [
+          Container(
+            padding: const EdgeInsets.all(5),
+            color: color,
+            width: 180.0,
+            height: 180.0,
+            child: IconButton(
+              icon: Icon(
+                icon,
+                color: Colors.white,
+                size: 100.0,
+              ),
+              onPressed: () {
+                navigateTo(
+                  context,
+                  AsceticismFlakesScreen(),
+                );
+              },
+            ),
+          ),
+          Container(
+            padding: const EdgeInsets.symmetric(
+              vertical: 15.0,
+            ),
+            width: double.infinity,
+            color: Colors.black.withOpacity(.0),
+            child: Text(
+              title,
+              textAlign: TextAlign.center,
+              style: const TextStyle(
+                color: Colors.white,
+                fontSize: 20.0,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          )
+        ],
+      ),
+    );
+  }
 }
+
+// DRY => Don't Repeat Yourself
