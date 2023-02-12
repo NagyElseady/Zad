@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:zad/shared/data/models/Lecture.dart';
 import 'package:zad/shared/data/models/Section.dart';
 
+import '../../shared/ui/navigate_to.dart';
+import '../lecture_screen/lecture_screen.dart';
+
 class SectionDetailScreen extends StatelessWidget {
   final Section section;
 
@@ -18,12 +21,19 @@ class SectionDetailScreen extends StatelessWidget {
             itemCount: section.lectures.length,
             itemBuilder: (context, index) {
               return ListTile(
-                title: itemView(section.lectures[index]),
+                title: itemView(context, section.lectures[index]),
               );
             }));
   }
 
-  Widget itemView(Lecture item) {
-    return Text(item.title);
+  Widget itemView(BuildContext context, Lecture item) {
+    return TextButton(
+        onPressed: () {
+          navigateTo(
+            context,
+            LectureScreen(item),
+          );
+        },
+        child: Text(item.title));
   }
 }

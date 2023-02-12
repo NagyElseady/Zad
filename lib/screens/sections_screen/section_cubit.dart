@@ -1,7 +1,7 @@
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../sections_screen/zad_states.dart';
+import '../zad_states.dart';
 
 class ZadCubit extends Cubit<ZadStates> {
   ZadCubit() : super(ZadInitialState());

@@ -6,7 +6,7 @@ import '../../shared/data/models/Section.dart';
 import '../asceticism_flakes_screen/section_detail_screen.dart';
 import '../../shared/ui/navigate_to.dart';
 import '../sections_screen/section_cubit.dart';
-import '../sections_screen/zad_states.dart';
+import '../zad_states.dart';
 
 class SectionsScreen extends StatelessWidget {
   SectionsScreen({Key? key}) : super(key: key);
