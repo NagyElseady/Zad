@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../asceticism_flakes_screen/aseceticism_flakes.dart';
+import '../asceticism_flakes_screen/section_detail_screen.dart';
 import '../contemporary%20_islamic_%20issues/contemporary%20_islamic_%20issues.dart';
 import '../education_%20muslim%20family_screen/education_muslim_screen.dart';
 import '../history_stories_screen/history_stories_screen.dart';
@@ -35,7 +35,6 @@ class ZadCubit extends Cubit<ZadStates> {
   List<Map> variousSubjects = [];*/
 
   List<Widget> screens = [
-    AsceticismFlakesScreen(),
     const ContemporaryIslamicIssuesScreen(),
     const EducationMuslimFamilyScreen(),
     const HistoryStoriesScreen(),
