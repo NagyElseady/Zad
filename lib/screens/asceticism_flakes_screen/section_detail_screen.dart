@@ -5,7 +5,7 @@ import 'package:zad/shared/data/models/Section.dart';
 class SectionDetailScreen extends StatelessWidget {
   final Section section;
 
-  SectionDetailScreen(this.section, {super.key});
+  const SectionDetailScreen(this.section, {super.key});
 
   @override
   Widget build(BuildContext context) {

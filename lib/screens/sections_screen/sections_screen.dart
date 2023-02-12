@@ -4,24 +4,16 @@ import 'package:zad/shared/data/models/Lecture.dart';
 
 import '../../shared/data/models/Section.dart';
 import '../asceticism_flakes_screen/section_detail_screen.dart';
-import '../components.dart';
-import '../contemporary _islamic_ issues/contemporary _islamic_ issues.dart';
-import '../education_ muslim family_screen/education_muslim_screen.dart';
-import '../history_stories_screen/history_stories_screen.dart';
-import '../islamic_faith_screen/islamic_faith_screen.dart';
-import '../jurisprudence_screen/juispudence_screen.dart';
-import '../literature _ethics_screen/literature_ethics_screen.dart';
-import '../periodic _events_screen/periodic_event_screen.dart';
-import '../seasons _ goodness_screen/seasons_goodness_screen.dart';
+import '../../shared/ui/navigate_to.dart';
 import '../sections_screen/section_cubit.dart';
 import '../sections_screen/zad_states.dart';
-import '../various_subjects_screen/various_subject_screen.dart';
 
 class SectionsScreen extends StatelessWidget {
   SectionsScreen({Key? key}) : super(key: key);
 
   List<Section> sections = [
-    Section("الزهد والرقائق",
+    Section(
+        "الزهد والرقائق",
         [
           Lecture(" خطبة ١", "محتوى ١"),
           Lecture("خطبة ٢", "محتوى ٢"),
@@ -31,7 +23,8 @@ class SectionsScreen extends StatelessWidget {
         ],
         Icons.brightness_low_outlined,
         Colors.grey),
-    Section("العقيدة الإسلامية",
+    Section(
+        "العقيدة الإسلامية",
         [
           Lecture("خطبة ٦", "محتوى ٦"),
           Lecture("خطبة ٧", "محتوى ٧"),
@@ -93,8 +86,8 @@ class SectionsScreen extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(
-            10.0,
-          )),
+        10.0,
+      )),
       clipBehavior: Clip.antiAliasWithSaveLayer,
       width: 180.0,
       child: Stack(
@@ -178,8 +171,8 @@ Widget oldView(BuildContext context) {
                                   Container(
                                     decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(
-                                          10.0,
-                                        )),
+                                      10.0,
+                                    )),
                                     clipBehavior: Clip.antiAliasWithSaveLayer,
                                     width: 180.0,
                                     child: Stack(
@@ -199,7 +192,7 @@ Widget oldView(BuildContext context) {
                                             onPressed: () {
                                               navigateTo(
                                                 context,
-                                                VariousSubjectsScreen(),
+                                                const Text(''),
                                               );
                                             },
                                           ),
@@ -227,8 +220,8 @@ Widget oldView(BuildContext context) {
                                   Container(
                                     decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(
-                                          10.0,
-                                        )),
+                                      10.0,
+                                    )),
                                     clipBehavior: Clip.antiAliasWithSaveLayer,
                                     width: 180.0,
                                     child: Stack(
@@ -237,7 +230,7 @@ Widget oldView(BuildContext context) {
                                         Container(
                                           padding: const EdgeInsets.all(5),
                                           color:
-                                          Colors.deepPurpleAccent.shade100,
+                                              Colors.deepPurpleAccent.shade100,
                                           width: 180.0,
                                           height: 180.0,
                                           child: IconButton(
@@ -249,7 +242,7 @@ Widget oldView(BuildContext context) {
                                             onPressed: () {
                                               navigateTo(
                                                 context,
-                                                const IslamicFaithScreen(),
+                                                const Text(''),
                                               );
                                             },
                                           ),
@@ -288,8 +281,8 @@ Widget oldView(BuildContext context) {
                                   Container(
                                     decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(
-                                          10.0,
-                                        )),
+                                      10.0,
+                                    )),
                                     clipBehavior: Clip.antiAliasWithSaveLayer,
                                     width: 180.0,
                                     child: Stack(
@@ -307,8 +300,8 @@ Widget oldView(BuildContext context) {
                                               size: 100.0,
                                             ),
                                             onPressed: () {
-                                              navigateTo(context,
-                                                  const jurisprudenceScreen());
+                                              navigateTo(
+                                                  context, const Text(''));
                                             },
                                           ),
                                         ),
@@ -335,8 +328,8 @@ Widget oldView(BuildContext context) {
                                   Container(
                                     decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(
-                                          10.0,
-                                        )),
+                                      10.0,
+                                    )),
                                     clipBehavior: Clip.antiAliasWithSaveLayer,
                                     width: 180.0,
                                     child: Stack(
@@ -354,8 +347,8 @@ Widget oldView(BuildContext context) {
                                               size: 100.0,
                                             ),
                                             onPressed: () {
-                                              navigateTo(context,
-                                                  const LiteratureEthicsScreen());
+                                              navigateTo(
+                                                  context, const Text(''));
                                             },
                                           ),
                                         ),
@@ -393,8 +386,8 @@ Widget oldView(BuildContext context) {
                                   Container(
                                     decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(
-                                          10.0,
-                                        )),
+                                      10.0,
+                                    )),
                                     clipBehavior: Clip.antiAliasWithSaveLayer,
                                     width: 180.0,
                                     child: Stack(
@@ -412,8 +405,8 @@ Widget oldView(BuildContext context) {
                                               size: 100.0,
                                             ),
                                             onPressed: () {
-                                              navigateTo(context,
-                                                  const ContemporaryIslamicIssuesScreen());
+                                              navigateTo(
+                                                  context, const Text(''));
                                             },
                                           ),
                                         ),
@@ -425,7 +418,7 @@ Widget oldView(BuildContext context) {
                                           color: Colors.black.withOpacity(.0),
                                           child: const Text(
                                             'قضايا اسلاميه'
-                                                ' معاصرة',
+                                            ' معاصرة',
                                             overflow: TextOverflow.ellipsis,
                                             textAlign: TextAlign.center,
                                             style: TextStyle(
@@ -442,8 +435,8 @@ Widget oldView(BuildContext context) {
                                   Container(
                                     decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(
-                                          10.0,
-                                        )),
+                                      10.0,
+                                    )),
                                     clipBehavior: Clip.antiAliasWithSaveLayer,
                                     width: 180.0,
                                     child: Stack(
@@ -463,7 +456,7 @@ Widget oldView(BuildContext context) {
                                             onPressed: () {
                                               navigateTo(
                                                 context,
-                                                const EducationMuslimFamilyScreen(),
+                                                const Text(''),
                                               );
                                             },
                                           ),
@@ -476,7 +469,7 @@ Widget oldView(BuildContext context) {
                                           color: Colors.black.withOpacity(.0),
                                           child: const Text(
                                             'التربيه والاسرة '
-                                                'المسلمة',
+                                            'المسلمة',
                                             textAlign: TextAlign.center,
                                             style: TextStyle(
                                               color: Colors.white,
@@ -503,8 +496,8 @@ Widget oldView(BuildContext context) {
                                   Container(
                                     decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(
-                                          10.0,
-                                        )),
+                                      10.0,
+                                    )),
                                     clipBehavior: Clip.antiAliasWithSaveLayer,
                                     width: 180.0,
                                     child: Stack(
@@ -522,8 +515,8 @@ Widget oldView(BuildContext context) {
                                               size: 100.0,
                                             ),
                                             onPressed: () {
-                                              navigateTo(context,
-                                                  const HistoryStoriesScreen());
+                                              navigateTo(
+                                                  context, const Text(''));
                                             },
                                           ),
                                         ),
@@ -550,8 +543,8 @@ Widget oldView(BuildContext context) {
                                   Container(
                                     decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(
-                                          10.0,
-                                        )),
+                                      10.0,
+                                    )),
                                     clipBehavior: Clip.antiAliasWithSaveLayer,
                                     width: 180.0,
                                     child: Stack(
@@ -560,7 +553,7 @@ Widget oldView(BuildContext context) {
                                         Container(
                                           padding: const EdgeInsets.all(5),
                                           color:
-                                          Colors.lightGreenAccent.shade400,
+                                              Colors.lightGreenAccent.shade400,
                                           width: 180.0,
                                           height: 180.0,
                                           child: IconButton(
@@ -570,8 +563,8 @@ Widget oldView(BuildContext context) {
                                               size: 100.0,
                                             ),
                                             onPressed: () {
-                                              navigateTo(context,
-                                                  const VariousSubjectsScreen());
+                                              navigateTo(
+                                                  context, const Text(''));
                                             },
                                           ),
                                         ),
@@ -609,8 +602,8 @@ Widget oldView(BuildContext context) {
                                   Container(
                                     decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(
-                                          10.0,
-                                        )),
+                                      10.0,
+                                    )),
                                     clipBehavior: Clip.antiAliasWithSaveLayer,
                                     width: 180.0,
                                     child: Stack(
@@ -628,8 +621,8 @@ Widget oldView(BuildContext context) {
                                               size: 100.0,
                                             ),
                                             onPressed: () {
-                                              navigateTo(context,
-                                                  const SeasonsGoodnessScreen());
+                                              navigateTo(
+                                                  context, const Text(''));
                                             },
                                           ),
                                         ),
@@ -656,8 +649,8 @@ Widget oldView(BuildContext context) {
                                   Container(
                                     decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(
-                                          10.0,
-                                        )),
+                                      10.0,
+                                    )),
                                     clipBehavior: Clip.antiAliasWithSaveLayer,
                                     width: 180.0,
                                     child: Stack(
@@ -677,7 +670,7 @@ Widget oldView(BuildContext context) {
                                             onPressed: () {
                                               navigateTo(
                                                 context,
-                                                const PeriodicEventScreen(),
+                                                const Text(''),
                                               );
                                             },
                                           ),
