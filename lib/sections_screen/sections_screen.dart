@@ -77,7 +77,7 @@ class SectionsScreen extends StatelessWidget {
                                               onPressed: () {
                                                 navigateTo(
                                                   context,
-                                                   AsceticismFlakesScreen(),
+                                                  AsceticismFlakesScreen(),
                                                 );
                                               },
                                             ),

@@ -5,6 +5,7 @@ import '../components.dart';
 class AsceticismFlakesScreen extends StatelessWidget {
   AsceticismFlakesScreen({Key? key}) : super(key: key);
   var lecture = [];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

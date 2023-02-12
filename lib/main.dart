@@ -10,6 +10,7 @@ class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   static const String title = 'Flutter Code Sample';
+
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
