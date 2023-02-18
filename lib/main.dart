@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:zad/screens/sections_screen/sections_screen.dart';
+import 'package:zad/sections/sections_screen.dart';
+import 'package:zad/shared/ui/side_drawer.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: SectionsScreen(),
       title: 'Localizations Sample App',
@@ -29,7 +30,20 @@ class MyApp extends StatelessWidget {
   }
 }
 
-// return const MaterialApp(
-//debugShowCheckedModeBanner: false,
-// home: SectionsScreen(),///
-//  );
+class MyHomePage extends StatelessWidget {
+  const MyHomePage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      drawer: const SideDrawer(),
+      appBar: AppBar(
+        title: const Text('SideBar menu - FlutterCorner'),
+        backgroundColor: Colors.black,
+      ),
+      body: const Center(
+        child: Text('Side Menu Tutorial'),
+      ),
+    );
+  }
+}
