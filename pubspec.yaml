@@ -54,7 +54,6 @@ dependencies:
   rxdart: ^0.27.7
   flutter_localization: ^0.1.10
   intl_utils: ^2.8.1
-  easy_sidemenu: ^0.4.1+1
   flutter_localizations:
     sdk: flutter
   intl: any

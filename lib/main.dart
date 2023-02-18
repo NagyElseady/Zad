@@ -10,40 +10,36 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  static const String title = 'Flutter Code Sample';
-
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: SectionsScreen(),
+    return const MaterialApp(
       title: 'Localizations Sample App',
-      localizationsDelegates: const [
+      home: HomePage(),
+      debugShowCheckedModeBanner: false,
+      localizationsDelegates: [
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
       ],
-      supportedLocales: const [
+      supportedLocales: [
         Locale('ar'),
       ],
     );
   }
 }
 
-class MyHomePage extends StatelessWidget {
-  const MyHomePage({super.key});
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: const SideDrawer(),
       appBar: AppBar(
-        title: const Text('SideBar menu - FlutterCorner'),
-        backgroundColor: Colors.black,
+        title: const Text('زاد الدعاة'),
+        backgroundColor: Colors.teal,
       ),
-      body: const Center(
-        child: Text('Side Menu Tutorial'),
-      ),
+      drawer: const SideDrawer(),
+      body: SectionsScreen(),
     );
   }
 }

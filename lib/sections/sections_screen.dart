@@ -141,21 +141,8 @@ class SectionsScreen extends StatelessWidget {
             listener: (context, state) {},
             builder: (context, state) {
               return Scaffold(
-                  appBar: AppBar(
-                    backgroundColor: Colors.teal,
-                    actions: [
-                      IconButton(
-                        onPressed: () {
-                          Navigator.pop(context);
-                        },
-                        icon: const Icon(
-                          Icons.menu,
-                        ),
-                      ),
-                    ],
-                    title: const Text('الأقسام'),
-                  ),
-                  body: screenView(context));
+                body: screenView(context),
+              );
             }));
   }
 
