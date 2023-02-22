@@ -1,3 +1,13 @@
-{
-  "helloWorld": "helloWorld"
-}
+  {
+  "title": "زَاد الدُّعَاة",
+  "screen_titleA": "الزهد والرقائق",
+  "screen_titleB": "العقيدة الإسلامية",
+  "screen_titleC": "الفقة",
+  "screen_titleD": "الأدب والأاخلاق",
+  "screen_titleF": "قضايا اسلاميه معاصرة",
+  "screen_titleG": "التربيه والاسرة المسلمة",
+  "screen_titleH": "التاريخ والقصص",
+  "screen_titleI": "موضوعات متنوعه",
+  "screen_titleJ": "مواسم الخير",
+  "screen_titleK": "مناسبات دوريه"
+    }

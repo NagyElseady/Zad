@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:zad/sections/sections_screen.dart';
 import 'package:zad/shared/ui/side_drawer.dart';
@@ -17,12 +18,13 @@ class MyApp extends StatelessWidget {
       home: HomePage(),
       debugShowCheckedModeBanner: false,
       localizationsDelegates: [
+        AppLocalizations.delegate,
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
       ],
       supportedLocales: [
-        Locale('ar'),
+        Locale('en'),
       ],
     );
   }
@@ -35,7 +37,8 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('زاد الدعاة'),
+        centerTitle: true,
+        title: Text(AppLocalizations.of(context).title),
         backgroundColor: Colors.teal,
       ),
       drawer: const SideDrawer(),
