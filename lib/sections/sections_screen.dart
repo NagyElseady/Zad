@@ -6,6 +6,7 @@ import '../screens/section_detail/section_detail.dart';
 import '../screens/sections_screen/section_cubit.dart';
 import '../screens/zad_states.dart';
 import '../shared/data/models/Section.dart';
+import '../shared/localization/localizations.dart';
 import '../shared/ui/navigate_to.dart';
 
 class SectionsScreen extends StatelessWidget {
@@ -13,7 +14,7 @@ class SectionsScreen extends StatelessWidget {
 
   List<Section> sections = [
     Section(
-        AppL,
+        localizations.screen_titleA,
         [
           Lecture(" خطبة ١", "محتوى ١"),
           Lecture("خطبة ٢", "محتوى ٢"),
