@@ -25,7 +25,7 @@ class SectionsScreen extends StatelessWidget {
         Icons.brightness_low_outlined,
         Colors.grey),
     Section(
-      "العقيدة الإسلامية",
+      localizations.screen_titleB,
       [
         Lecture("خطبة ٦", "محتوى ٦"),
         Lecture("خطبة ٧", "محتوى ٧"),
@@ -37,7 +37,7 @@ class SectionsScreen extends StatelessWidget {
       Colors.deepPurpleAccent.shade100,
     ),
     Section(
-      "الفقة",
+      localizations.screen_titleC,
       [
         Lecture("خطبة ٦", "محتوى ٦"),
         Lecture("خطبة ٧", "محتوى ٧"),
@@ -49,7 +49,7 @@ class SectionsScreen extends StatelessWidget {
       Colors.brown.shade300,
     ),
     Section(
-      "الادب والأخلاق",
+      localizations.screen_titleD,
       [
         Lecture("خطبة ٦", "محتوى ٦"),
         Lecture("خطبة ٧", "محتوى ٧"),
@@ -61,7 +61,7 @@ class SectionsScreen extends StatelessWidget {
       Colors.indigoAccent.shade100,
     ),
     Section(
-      "قضايا اسلاميه معاصرة",
+      localizations.screen_titleF,
       [
         Lecture("خطبة ٦", "محتوى ٦"),
         Lecture("خطبة ٧", "محتوى ٧"),
@@ -73,7 +73,7 @@ class SectionsScreen extends StatelessWidget {
       Colors.lightGreen,
     ),
     Section(
-      "التربيه والاسرة المسلمة",
+      localizations.screen_titleG,
       [
         Lecture("خطبة ٦", "محتوى ٦"),
         Lecture("خطبة ٧", "محتوى ٧"),
@@ -85,7 +85,7 @@ class SectionsScreen extends StatelessWidget {
       Colors.teal,
     ),
     Section(
-      "التاريخ والقصص",
+      localizations.screen_titleH,
       [
         Lecture("خطبة ٦", "محتوى ٦"),
         Lecture("خطبة ٧", "محتوى ٧"),
@@ -97,7 +97,7 @@ class SectionsScreen extends StatelessWidget {
       Colors.redAccent,
     ),
     Section(
-      "موضوعات متنوعه",
+      localizations.screen_titleI,
       [
         Lecture("خطبة ٦", "محتوى ٦"),
         Lecture("خطبة ٧", "محتوى ٧"),
@@ -109,7 +109,7 @@ class SectionsScreen extends StatelessWidget {
       Colors.blueGrey,
     ),
     Section(
-      "مواسم الخير",
+      localizations.screen_titleG,
       [
         Lecture("خطبة ٦", "محتوى ٦"),
         Lecture("خطبة ٧", "محتوى ٧"),
@@ -121,7 +121,7 @@ class SectionsScreen extends StatelessWidget {
       Colors.orange,
     ),
     Section(
-      "مناسبات دوريه",
+      localizations.screen_titleK,
       [
         Lecture("خطبة ٦", "محتوى ٦"),
         Lecture("خطبة ٧", "محتوى ٧"),

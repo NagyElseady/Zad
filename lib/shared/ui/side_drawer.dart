@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:zad/shared/localization/localizations.dart';
 
 class SideDrawer extends StatelessWidget {
   const SideDrawer({super.key});
@@ -15,19 +16,19 @@ class SideDrawer extends StatelessWidget {
             ),
             child: Center(
               child: Column(
-                children: const [
+                children: [
                   Text(
-                    'زَاد الدُّعَاة ',
+                    localizations.title,
                     textAlign: TextAlign.right,
-                    style: TextStyle(color: Colors.white, fontSize: 25),
+                    style: const TextStyle(color: Colors.white, fontSize: 25),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                   Text(
-                    '(خُطْب ومُحَاضَرَات)',
+                    localizations.drawer_titleM,
                     textAlign: TextAlign.right,
-                    style: TextStyle(color: Colors.white, fontSize: 25),
+                    style: const TextStyle(color: Colors.white, fontSize: 25),
                   ),
                 ],
               ),
@@ -35,45 +36,45 @@ class SideDrawer extends StatelessWidget {
           ),
           ListTile(
             leading: const Icon(Icons.search),
-            title: const Text(
-              style: TextStyle(fontWeight: FontWeight.bold),
-              'البحث',
+            title: Text(
+              style: const TextStyle(fontWeight: FontWeight.bold),
+              localizations.drawer_titleN,
               textAlign: TextAlign.right,
             ),
             onTap: () => {},
           ),
           ListTile(
             leading: const Icon(Icons.favorite_border_outlined),
-            title: const Text(
-              'المفضلة',
-              style: TextStyle(fontWeight: FontWeight.bold),
+            title: Text(
+              localizations.drawer_titleO,
+              style: const TextStyle(fontWeight: FontWeight.bold),
               textAlign: TextAlign.right,
             ),
             onTap: () => {Navigator.of(context).pop()},
           ),
           ListTile(
             leading: const Icon(Icons.settings),
-            title: const Text(
-              style: TextStyle(fontWeight: FontWeight.bold),
-              'الضبط',
+            title: Text(
+              style: const TextStyle(fontWeight: FontWeight.bold),
+              localizations.drawer_titleQ,
               textAlign: TextAlign.right,
             ),
             onTap: () => {Navigator.of(context).pop()},
           ),
           ListTile(
             leading: const Icon(Icons.feedback),
-            title: const Text(
-              style: TextStyle(fontWeight: FontWeight.bold),
-              'حول',
+            title: Text(
+              localizations.drawer_titleW,
+              style: const TextStyle(fontWeight: FontWeight.bold),
               textAlign: TextAlign.right,
             ),
             onTap: () => {Navigator.of(context).pop()},
           ),
           ListTile(
             leading: const Icon(Icons.receipt_long_sharp),
-            title: const Text(
-              'المصادر',
-              style: TextStyle(fontWeight: FontWeight.bold),
+            title: Text(
+              localizations.drawer_titleX,
+              style: const TextStyle(fontWeight: FontWeight.bold),
               textAlign: TextAlign.right,
             ),
             onTap: () => {Navigator.of(context).pop()},
