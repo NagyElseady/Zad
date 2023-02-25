@@ -10,8 +10,13 @@ class LectureScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          backgroundColor: Colors.teal,
           centerTitle: true,
-          title: Text(lecture.title),
+          title: Row(
+            children: [
+              Text(lecture.title),
+            ],
+          ),
         ),
         body: screenView(context));
   }

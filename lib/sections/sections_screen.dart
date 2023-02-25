@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:zad/shared/data/models/Lecture.dart';
-
 import '../screens/section_detail/section_detail.dart';
 import '../screens/sections_screen/section_cubit.dart';
 import '../screens/zad_states.dart';

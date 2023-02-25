@@ -5,7 +5,6 @@ import 'package:zad/sections/sections_screen.dart';
 import 'package:zad/shared/app/app.dart';
 import 'package:zad/shared/ui/side_drawer.dart';
 
-
 void main() {
   runApp(const MyApp());
 }
@@ -27,7 +26,7 @@ class MyApp extends StatelessWidget {
         GlobalCupertinoLocalizations.delegate,
       ],
       supportedLocales: const [
-        Locale('en'),
+        Locale('ar'),
       ],
     );
   }
