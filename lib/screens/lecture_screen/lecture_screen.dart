@@ -33,7 +33,7 @@ class LectureScreen extends StatelessWidget {
       child: Text(
         lecture.content,
         maxLines: 3,
-        overflow: TextOverflow.ellipsis,
+        overflow: TextOverflow.visible,
       ),
     );
   }

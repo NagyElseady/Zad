@@ -52,16 +52,24 @@ class SectionDetailScreen extends StatelessWidget {
                 children: [
                   Text(
                     item.title,
+                    style: const TextStyle(
+                      color: Colors.black,
+                      fontSize: 30.0,
+                    ),
                   ),
                   Text(
+                    style: const TextStyle(
+                      color: Colors.black,
+                    ),
                     item.content,
-                    maxLines: 3,
-                    overflow: TextOverflow.ellipsis,
+                    maxLines: 5,
                   )
                 ],
               ),
             ),
-            const Spacer(),
+            const SizedBox(
+              width: 30.0,
+            ),
             const BottomSheetExample(),
           ],
         ),

@@ -1,5 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:zad/shared/localization/localizations.dart';
+import 'package:zad/shared/ui/navigate_to.dart';
+import 'package:zad/sidemenu_option/favorite.dart';
+
+import '../../sidemenu_option/information.dart';
+import '../../sidemenu_option/search.dart';
+import '../../sidemenu_option/source.dart';
 
 class SideDrawer extends StatelessWidget {
   const SideDrawer({super.key});
@@ -38,28 +44,29 @@ class SideDrawer extends StatelessWidget {
             leading: const Icon(Icons.search),
             title: Text(
               style: const TextStyle(fontWeight: FontWeight.bold),
-              localizations.drawer_titleN,
+              localizations.drawer_titleM,
               textAlign: TextAlign.right,
             ),
-            onTap: () => {},
+            onTap: () {
+              navigateTo(
+                context,
+                const Search(),
+              );
+            },
           ),
           ListTile(
             leading: const Icon(Icons.favorite_border_outlined),
             title: Text(
-              localizations.drawer_titleO,
+              localizations.drawer_titleN,
               style: const TextStyle(fontWeight: FontWeight.bold),
               textAlign: TextAlign.right,
             ),
-            onTap: () => {Navigator.of(context).pop()},
-          ),
-          ListTile(
-            leading: const Icon(Icons.settings),
-            title: Text(
-              style: const TextStyle(fontWeight: FontWeight.bold),
-              localizations.drawer_titleQ,
-              textAlign: TextAlign.right,
-            ),
-            onTap: () => {Navigator.of(context).pop()},
+            onTap: () {
+              navigateTo(
+                context,
+                const Favorite(),
+              );
+            },
           ),
           ListTile(
             leading: const Icon(Icons.feedback),
@@ -68,7 +75,9 @@ class SideDrawer extends StatelessWidget {
               style: const TextStyle(fontWeight: FontWeight.bold),
               textAlign: TextAlign.right,
             ),
-            onTap: () => {Navigator.of(context).pop()},
+            onTap: () {
+              navigateTo(context, const Information());
+            },
           ),
           ListTile(
             leading: const Icon(Icons.receipt_long_sharp),
@@ -77,7 +86,12 @@ class SideDrawer extends StatelessWidget {
               style: const TextStyle(fontWeight: FontWeight.bold),
               textAlign: TextAlign.right,
             ),
-            onTap: () => {Navigator.of(context).pop()},
+            onTap: () {
+              navigateTo(
+                context,
+                const Source(),
+              );
+            },
           ),
         ],
       ),

@@ -16,6 +16,17 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Localizations Sample App',
+      theme: ThemeData(
+          elevatedButtonTheme: ElevatedButtonThemeData(
+              style: ElevatedButton.styleFrom(
+        backgroundColor: Colors.transparent,
+        foregroundColor: Colors.black,
+        shadowColor: Colors.transparent,
+      )
+
+          )
+
+      ),
       navigatorKey: App.navigatorKey,
       home: const HomePage(),
       debugShowCheckedModeBanner: false,
