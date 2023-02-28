@@ -17,15 +17,14 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Localizations Sample App',
       theme: ThemeData(
-          elevatedButtonTheme: ElevatedButtonThemeData(
-              style: ElevatedButton.styleFrom(
-        backgroundColor: Colors.transparent,
-        foregroundColor: Colors.black,
-        shadowColor: Colors.transparent,
-      )
-
-          )
-
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Colors.transparent,
+            foregroundColor: Colors.black,
+            shadowColor: Colors.transparent,
+          ),
+        ),
+        fontFamily: 'Cairo',
       ),
       navigatorKey: App.navigatorKey,
       home: const HomePage(),
@@ -51,7 +50,9 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text(AppLocalizations.of(context).title),
+        title: Text(AppLocalizations
+            .of(context)
+            .title),
         backgroundColor: Colors.teal,
       ),
       drawer: const SideDrawer(),
