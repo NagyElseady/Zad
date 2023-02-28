@@ -26,7 +26,7 @@ class SideDrawer extends StatelessWidget {
                     height: 20,
                   ),
                   Text(
-                    localizations.drawer_titleM,
+                    localizations.drawer_titleL,
                     textAlign: TextAlign.right,
                     style: const TextStyle(color: Colors.white, fontSize: 25),
                   ),

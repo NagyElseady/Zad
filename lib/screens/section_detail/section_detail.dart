@@ -15,8 +15,11 @@ class SectionDetailScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.teal,
         centerTitle: true,
-        title: Text(section.title),
+        title: Text(
+          section.title,
+        ),
       ),
       body: ListView.builder(
           itemCount: section.lectures.length,
@@ -43,10 +46,22 @@ class SectionDetailScreen extends StatelessWidget {
         alignment: Alignment.bottomRight,
         child: Row(
           children: [
-            Text(
-              item.title,
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    item.title,
+                  ),
+                  Text(
+                    item.content,
+                    maxLines: 3,
+                    overflow: TextOverflow.ellipsis,
+                  )
+                ],
+              ),
             ),
-            Spacer(),
+            const Spacer(),
             const BottomSheetExample(),
           ],
         ),
