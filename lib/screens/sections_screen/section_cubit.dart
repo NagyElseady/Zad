@@ -50,6 +50,30 @@ class ZadCubit extends Cubit<ZadStates> {
     });
   }
 
+  insertToDatabase({
+    required String title,
+    required String content,
+  }) async {
+    await database.transaction((txn) async {
+      await txn
+          .rawInsert(
+              'INSERT INTO zad (title , content  ) VALUES ("$title", "$content ")')
+          .then((value) {
+        if (kDebugMode) {
+          print('$value inserted successfully');
+          emit(ZadInsertDatabaseState());
+
+          getDataFromDatabase(database);
+        }
+      }).catchError((error) {
+        if (kDebugMode) {
+          print('Error When Inserting New Record ${error.toString()}');
+        }
+        return null;
+      });
+    });
+  }
+
   void getDataFromDatabase(database) {
     database.rawQuery('SELECT * FROM zad');
 
