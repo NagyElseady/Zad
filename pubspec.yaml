@@ -52,6 +52,7 @@ dependencies:
   fluttertoast: ^8.1.2
   carousel_slider: ^4.2.1
   rxdart: ^0.27.7
+  url_launcher: ^6.1.10
   flutter_localization: ^0.1.10
   intl_utils: ^2.8.1
   flutter_localizations:

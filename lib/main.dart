@@ -5,8 +5,12 @@ import 'package:zad/sections/sections_screen.dart';
 import 'package:zad/shared/app/app.dart';
 import 'package:zad/shared/ui/side_drawer.dart';
 
-void main() {
-  runApp(const MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  runApp(
+    const MyApp(),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -50,9 +54,7 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text(AppLocalizations
-            .of(context)
-            .title),
+        title: Text(AppLocalizations.of(context).title),
         backgroundColor: Colors.teal,
       ),
       drawer: const SideDrawer(),

@@ -2,16 +2,16 @@ abstract class ZadStates {}
 
 class ZadInitialState extends ZadStates {}
 
-class AppCreateDatabaseStates extends ZadStates {}
+class ZadCreateDatabaseStates extends ZadStates {}
 
-class AppGetDatabaseState extends ZadStates {}
+class ZadGetDatabaseState extends ZadStates {}
 
-class AppGetDatabaseLoadingState extends ZadStates {}
+class ZadGetDatabaseLoadingState extends ZadStates {}
 
-class AppInsertDatabaseState extends ZadStates {}
+class ZadInsertDatabaseState extends ZadStates {}
 
-class AppUpdateDatabaseState extends ZadStates {}
+class ZadUpdateDatabaseState extends ZadStates {}
 
-class AppDeleteDatabaseState extends ZadStates {}
+class ZadDeleteDatabaseState extends ZadStates {}
 
-class AppChangeScreenState extends ZadStates {}
+class ZadChangeScreenState extends ZadStates {}

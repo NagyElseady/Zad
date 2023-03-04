@@ -12,6 +12,27 @@ class Source extends StatelessWidget {
         centerTitle: true,
         title: Text(localizations.drawer_titleX),
       ),
+      body: Column(
+        children: [
+          Column(
+            children: const [
+              Image(
+                image: AssetImage('assets/images/zad_pic.jpg'),
+                height: 100,
+                width: double.infinity,
+                fit: BoxFit.fill,
+              ),
+            ],
+          ),
+          const SizedBox(
+            height: 30,
+          ),
+          const Text('تم نسخ هذا المحتوى كاملا من موقع زاد الداعى'),
+          const Text(
+            ' جزى اللة القائمين عليه خير الجزاء ',
+          ),
+        ],
+      ),
     );
   }
 }
