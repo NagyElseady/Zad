@@ -27,7 +27,9 @@ class Source extends StatelessWidget {
           const SizedBox(
             height: 30,
           ),
+          // TODO: ADD TO localization file
           const Text('تم نسخ هذا المحتوى كاملا من موقع زاد الداعى'),
+          // TODO: ADD TO localization file
           const Text(
             ' جزى اللة القائمين عليه خير الجزاء ',
           ),
