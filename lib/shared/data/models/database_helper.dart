@@ -8,7 +8,7 @@ import 'package:sqflite/sqflite.dart';
 import 'package:zad/shared/data/models/database.dart';
 
 class ZadDataBaseHelper {
-  late Database db;
+  Database? db;
 
   Future<void> init() async {
     io.Directory applicationDirectory =
@@ -35,7 +35,7 @@ class ZadDataBaseHelper {
 
     late List<Map<String, dynamic>> title;
 
-    await db.transaction((txn) async {
+    await db?.transaction((txn) async {
       title = await txn.query(
         "title",
         columns: ["title", "details"],
