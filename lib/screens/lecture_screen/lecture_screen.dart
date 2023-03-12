@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:zad/shared/data/models/Lecture.dart';
 
+import '../../shared/data/models/lecture.dart';
 import '../bottom_sheet/bottom_sheet.dart';
 
 class LectureScreen extends StatelessWidget {
@@ -31,7 +31,7 @@ class LectureScreen extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(20.0),
       child: Text(
-        lecture.content,
+        lecture.details,
         maxLines: 3,
         overflow: TextOverflow.visible,
       ),

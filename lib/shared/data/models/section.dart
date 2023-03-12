@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 
-import 'Lecture.dart';
+import 'lecture.dart';
 
 class Section {
   String title;
@@ -8,5 +8,10 @@ class Section {
   IconData icon;
   Color color;
 
-  Section(this.title, this.lectures, this.icon, this.color);
+  Section(
+    this.title,
+    this.lectures,
+    this.icon,
+    this.color,
+  );
 }

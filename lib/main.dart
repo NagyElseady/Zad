@@ -1,8 +1,11 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:zad/sections/sections_screen.dart';
 import 'package:zad/shared/app/app.dart';
+import 'package:zad/shared/data/models/lecture.dart';
+import 'package:zad/shared/data/database/zad_database.dart';
 import 'package:zad/shared/ui/side_drawer.dart';
 
 void main() async {
@@ -11,6 +14,15 @@ void main() async {
   runApp(
     const MyApp(),
   );
+
+  await ZadDatabase().setup();
+  List<Lecture> lectures = await ZadDatabase().getAllZadLectures();
+  List<Lecture> lecturesByCategoryId1 = await ZadDatabase().lecturesByCategoryId(1);
+  List<Lecture> lecturesByCategoryId2 = await ZadDatabase().lecturesByCategoryId(2);
+  List<Lecture> lecturesByCategoryId3 = await ZadDatabase().lecturesByCategoryId(3);
+  if (kDebugMode) {
+    print(lectures.length);
+  }
 }
 
 class MyApp extends StatelessWidget {
@@ -19,7 +31,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Localizations Sample App',
+      title: '',
       theme: ThemeData(
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(

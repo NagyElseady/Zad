@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:zad/screens/bottom_sheet/bottom_sheet.dart';
-import 'package:zad/shared/data/models/Lecture.dart';
-import 'package:zad/shared/data/models/Section.dart';
+import 'package:zad/shared/data/models/section.dart';
 
+import '../../shared/data/models/lecture.dart';
 import '../../shared/ui/navigate_to.dart';
 import '../lecture_screen/lecture_screen.dart';
 
@@ -61,7 +61,7 @@ class SectionDetailScreen extends StatelessWidget {
                     style: const TextStyle(
                       color: Colors.black,
                     ),
-                    item.content,
+                    item.details,
                     maxLines: 5,
                   )
                 ],
