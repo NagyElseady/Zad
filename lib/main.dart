@@ -10,19 +10,11 @@ import 'package:zad/shared/ui/side_drawer.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await ZadDatabase().setup();
 
   runApp(
     const MyApp(),
   );
-
-  await ZadDatabase().setup();
-  List<Lecture> lectures = await ZadDatabase().getAllZadLectures();
-  List<Lecture> lecturesByCategoryId1 = await ZadDatabase().lecturesByCategoryId(1);
-  List<Lecture> lecturesByCategoryId2 = await ZadDatabase().lecturesByCategoryId(2);
-  List<Lecture> lecturesByCategoryId3 = await ZadDatabase().lecturesByCategoryId(3);
-  if (kDebugMode) {
-    print(lectures.length);
-  }
 }
 
 class MyApp extends StatelessWidget {

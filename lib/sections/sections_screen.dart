@@ -14,142 +14,62 @@ class SectionsScreen extends StatelessWidget {
 
   List<Section> sections = [
     Section(
+      1,
       localizations.screen_titleA,
-      [
-        Lecture(
-            id: 1,
-            title: " خطبة ١",
-            details:
-                "محتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوى ١",
-            categoryId: 1,
-            isFavorite: true),
-      ],
       Icons.brightness_low_outlined,
       Colors.grey,
     ),
     Section(
+      2,
       localizations.screen_titleB,
-      [
-        Lecture(
-            id: 1,
-            title: " خطبة ١",
-            details:
-                "محتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوى ١",
-            categoryId: 1,
-            isFavorite: true),
-      ],
       Icons.mosque_outlined,
       Colors.deepPurpleAccent.shade100,
     ),
     Section(
+      3,
       localizations.screen_titleC,
-      [
-        Lecture(
-            id: 1,
-            title: " خطبة ١",
-            details:
-                "محتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوى ١",
-            categoryId: 1,
-            isFavorite: true),
-      ],
       Icons.houseboat_sharp,
       Colors.brown.shade300,
     ),
     Section(
+      4,
       localizations.screen_titleD,
-      [
-        Lecture(
-            id: 1,
-            title: " خطبة ١",
-            details:
-                "محتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوى ١",
-            categoryId: 1,
-            isFavorite: true),
-      ],
       Icons.balance,
       Colors.indigoAccent.shade100,
     ),
     Section(
+      5,
       localizations.screen_titleF,
-      [
-        Lecture(
-            id: 1,
-            title: " خطبة ١",
-            details:
-                "محتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوى ١",
-            categoryId: 1,
-            isFavorite: true),
-      ],
       Icons.interpreter_mode_rounded,
       Colors.lightGreen,
     ),
     Section(
+      6,
       localizations.screen_titleG,
-      [
-        Lecture(
-            id: 1,
-            title: " خطبة ١",
-            details:
-                "محتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوى ١",
-            categoryId: 1,
-            isFavorite: true),
-      ],
       Icons.family_restroom,
       Colors.teal,
     ),
     Section(
+      7,
       localizations.screen_titleH,
-      [
-        Lecture(
-            id: 1,
-            title: " خطبة ١",
-            details:
-                "محتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوى ١",
-            categoryId: 1,
-            isFavorite: true),
-      ],
       Icons.history_edu,
       Colors.redAccent,
     ),
     Section(
+      8,
       localizations.screen_titleI,
-      [
-        Lecture(
-            id: 1,
-            title: " خطبة ١",
-            details:
-                "محتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوى ١",
-            categoryId: 1,
-            isFavorite: true),
-      ],
       Icons.school_outlined,
       Colors.blueGrey,
     ),
     Section(
+      9,
       localizations.screen_titleG,
-      [
-        Lecture(
-            id: 1,
-            title: " خطبة ١",
-            details:
-                "محتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوى ١",
-            categoryId: 1,
-            isFavorite: true),
-      ],
       Icons.real_estate_agent_outlined,
       Colors.orange,
     ),
     Section(
+      10,
       localizations.screen_titleK,
-      [
-        Lecture(
-            id: 1,
-            title: " خطبة ١",
-            details:
-                "محتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوىمحتوى ١",
-            categoryId: 1,
-            isFavorite: true),
-      ],
       Icons.paragliding,
       Colors.indigo.shade300,
     ),

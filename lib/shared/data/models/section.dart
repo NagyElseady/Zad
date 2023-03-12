@@ -3,14 +3,14 @@ import 'package:flutter/cupertino.dart';
 import 'lecture.dart';
 
 class Section {
+  int id;
   String title;
-  List<Lecture> lectures;
   IconData icon;
   Color color;
 
   Section(
+    this.id,
     this.title,
-    this.lectures,
     this.icon,
     this.color,
   );

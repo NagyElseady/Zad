@@ -15,11 +15,11 @@ class Lecture {
     required this.isFavorite,
   });
 
-  factory Lecture.from(Map<String, dynamic> json) => Lecture(
-        id: json[DatabaseColumn.id.value],
-        title: json[DatabaseColumn.title.value],
-        details: json[DatabaseColumn.details.value],
-        categoryId: json[DatabaseColumn.categoryId.value],
-        isFavorite: json[DatabaseColumn.isFavorite.value] == 1,
+  factory Lecture.from(Map<String, dynamic> map) => Lecture(
+        id: map[DatabaseColumn.id.value],
+        title: map[DatabaseColumn.title.value],
+        details: map[DatabaseColumn.details.value],
+        categoryId: map[DatabaseColumn.categoryId.value],
+        isFavorite: map[DatabaseColumn.isFavorite.value] == 1,
       );
 }

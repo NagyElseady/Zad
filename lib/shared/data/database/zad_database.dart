@@ -11,6 +11,7 @@ import '../models/database_column.dart';
 
 class ZadDatabase {
   Database? db;
+  String tableName = "zad";
 
   static final ZadDatabase _shared = ZadDatabase._internal();
 
@@ -35,23 +36,20 @@ class ZadDatabase {
 
       await io.File(dbPathZad).writeAsBytes(bytes, flush: true);
     }
+
     db = await openDatabase(dbPathZad);
   }
 
   Future<List<Lecture>> getAllZadLectures() async {
-    if (db == null) {
-      throw "bd is not initiated, initiate using [init(db)] function";
-    }
-
-    late List<Map<String, dynamic>> title;
+    late List<Map<String, dynamic>> list;
     await db?.transaction((txn) async {
-      title = await txn.query(
-        "zad",
+      list = await txn.query(
+        tableName,
         columns: DatabaseColumn.allValues,
       );
     });
 
-    return title.map((e) => Lecture.from(e)).toList();
+    return list.map((e) => Lecture.from(e)).toList();
   }
 
   Future<List<Lecture>> lecturesByCategoryId(int id) async {
@@ -66,7 +64,29 @@ class ZadDatabase {
 
     await db?.transaction((txn) async {
       title = await txn.query(
-        "zad",
+        tableName,
+        columns: DatabaseColumn.allValues,
+        where: where,
+        whereArgs: whereArgs,
+      );
+    });
+
+    return title.map((e) => Lecture.from(e)).toList();
+  }
+
+  Future<List<Lecture>> favoriteLectures() async {
+    if (db == null) {
+      throw "bd is not initiated, initiate using [init(db)] function";
+    }
+
+    late List<Map<String, dynamic>> title;
+
+    String where = '${DatabaseColumn.isFavorite.value} = ?';
+    List<dynamic> whereArgs = [1];
+
+    await db?.transaction((txn) async {
+      title = await txn.query(
+        tableName,
         columns: DatabaseColumn.allValues,
         where: where,
         whereArgs: whereArgs,
