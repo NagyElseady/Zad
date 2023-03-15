@@ -4,7 +4,5 @@ import '../app/app.dart';
 
 void navigate(widget) => Navigator.push(
       App.navigatorKey.currentContext!,
-      MaterialPageRoute(
-        builder: (context) => widget,
-      ),
+      MaterialPageRoute(builder: (context) => widget),
     );
