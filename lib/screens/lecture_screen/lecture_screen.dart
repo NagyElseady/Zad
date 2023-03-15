@@ -30,10 +30,11 @@ class LectureScreen extends StatelessWidget {
   Widget screenView(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(20.0),
-      child: Text(
-        lecture.details,
-        maxLines: 3,
-        overflow: TextOverflow.visible,
+      child: SingleChildScrollView(
+        child: Text(
+          lecture.details,
+          overflow: TextOverflow.visible,
+        ),
       ),
     );
   }
