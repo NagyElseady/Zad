@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
-void navigateTo(context, widget) => Navigator.push(
-      context,
+import '../app/app.dart';
+
+void navigate(widget) => Navigator.push(
+      App.navigatorKey.currentContext!,
       MaterialPageRoute(
         builder: (context) => widget,
       ),

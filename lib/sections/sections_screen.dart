@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../screens/section_detail/section_detail.dart';
+import '../screens/lectures_screen/lectures_screen.dart';
 import '../screens/sections_screen/section_cubit.dart';
 import '../screens/zad_states.dart';
-import '../shared/data/models/section.dart';
+import '../shared/data/database/zad_database.dart';
 import '../shared/data/models/lecture.dart';
+import '../shared/data/models/section.dart';
 import '../shared/localization/localizations.dart';
 import '../shared/ui/navigate_to.dart';
 
@@ -135,12 +136,7 @@ class SectionsScreen extends StatelessWidget {
                   size: 100.0,
                 ),
                 onPressed: () {
-                  navigateTo(
-                    context,
-                    SectionDetailScreen(
-                      section,
-                    ),
-                  );
+                  _onSectionItemTapped(section);
                 },
               ),
             ),
@@ -168,4 +164,13 @@ class SectionsScreen extends StatelessWidget {
       ),
     );
   }
+
+  void _onSectionItemTapped(Section section) async {
+    final lectures = await ZadDatabase().lecturesBySectionId(section.id);
+    navigate(LecturesScreen(
+      lectures: lectures,
+      title: section.title,
+    ));
+  }
+
 }

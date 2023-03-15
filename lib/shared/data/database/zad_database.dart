@@ -52,7 +52,7 @@ class ZadDatabase {
     return list.map((e) => Lecture.from(e)).toList();
   }
 
-  Future<List<Lecture>> lecturesByCategoryId(int id) async {
+  Future<List<Lecture>> lecturesBySectionId(int id) async {
     if (db == null) {
       throw "bd is not initiated, initiate using [init(db)] function";
     }
@@ -94,5 +94,37 @@ class ZadDatabase {
     });
 
     return title.map((e) => Lecture.from(e)).toList();
+  }
+
+  Future<List<Lecture>> search(String text) async {
+    if (db == null) {
+      throw "bd is not initiated, initiate using [init(db)] function";
+    }
+
+    late List<Map<String, dynamic>> title;
+
+    String where = '${DatabaseColumn.title.value} LIKE ? OR ${DatabaseColumn.details.value} LIKE ?';
+    List<dynamic> whereArgs = ['%$text%', '%$text%'];
+
+    await db?.transaction((txn) async {
+      title = await txn.query(
+        tableName,
+        columns: DatabaseColumn.allValues,
+        where: where,
+        whereArgs: whereArgs,
+      );
+    });
+
+    return title.map((e) => Lecture.from(e)).toList();
+  }
+
+  void updateLecture(Lecture item) async {
+    final map = item.toMap();
+    await db?.update(
+      tableName,
+      map,
+      where: '${DatabaseColumn.id.value} = ?',
+      whereArgs: [item.id],
+    );
   }
 }

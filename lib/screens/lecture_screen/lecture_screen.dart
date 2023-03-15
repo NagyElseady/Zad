@@ -12,10 +12,10 @@ class LectureScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          actions: const [
+          actions: [
             Padding(
-              padding: EdgeInsets.all(15.0),
-              child: BottomSheetExample(),
+              padding: const EdgeInsets.all(15.0),
+              child: LectureOptionsSheet(lecture: lecture),
             ),
           ],
           backgroundColor: Colors.teal,

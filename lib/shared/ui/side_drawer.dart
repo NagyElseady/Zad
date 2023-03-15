@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:zad/shared/localization/localizations.dart';
 import 'package:zad/shared/ui/navigate_to.dart';
-import 'package:zad/sidemenu_option/favorite.dart';
 
-import '../../sidemenu_option/information.dart';
-import '../../sidemenu_option/search.dart';
-import '../../sidemenu_option/source.dart';
+import '../../screens/lectures_screen/lectures_screen.dart';
+import '../../sidemenu_option/about_screen.dart';
+import '../../sidemenu_option/search_screen.dart';
+import '../../sidemenu_option/references_screen.dart';
+import '../data/database/zad_database.dart';
 
 class SideDrawer extends StatelessWidget {
   const SideDrawer({super.key});
@@ -48,10 +49,7 @@ class SideDrawer extends StatelessWidget {
               textAlign: TextAlign.right,
             ),
             onTap: () {
-              navigateTo(
-                context,
-                const Search(),
-              );
+              navigate(SearchScreen());
             },
           ),
           ListTile(
@@ -62,10 +60,7 @@ class SideDrawer extends StatelessWidget {
               textAlign: TextAlign.right,
             ),
             onTap: () {
-              navigateTo(
-                context,
-                const Favorite(),
-              );
+              _showFavorites();
             },
           ),
           ListTile(
@@ -76,7 +71,7 @@ class SideDrawer extends StatelessWidget {
               textAlign: TextAlign.right,
             ),
             onTap: () {
-              navigateTo(context, const Information());
+              navigate(const AboutScreen());
             },
           ),
           ListTile(
@@ -87,14 +82,19 @@ class SideDrawer extends StatelessWidget {
               textAlign: TextAlign.right,
             ),
             onTap: () {
-              navigateTo(
-                context,
-                const Source(),
-              );
+              navigate(const ReferencesScreen());
             },
           ),
         ],
       ),
     );
+  }
+
+  void _showFavorites() async {
+    final lectures = await ZadDatabase().favoriteLectures();
+    navigate(LecturesScreen(
+      lectures: lectures,
+      title: localizations.bottom_title4,
+    ));
   }
 }

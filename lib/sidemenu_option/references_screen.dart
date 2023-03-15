@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:zad/shared/localization/localizations.dart';
 
-class Source extends StatelessWidget {
-  const Source({Key? key}) : super(key: key);
+class ReferencesScreen extends StatelessWidget {
+  const ReferencesScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

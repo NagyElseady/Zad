@@ -22,4 +22,14 @@ class Lecture {
         categoryId: map[DatabaseColumn.categoryId.value],
         isFavorite: map[DatabaseColumn.isFavorite.value] == 1,
       );
+
+  Map<String, Object?> toMap() {
+    return {
+      DatabaseColumn.id.value: id,
+      DatabaseColumn.title.value: title,
+      DatabaseColumn.details.value: details,
+      DatabaseColumn.categoryId.value: categoryId,
+      DatabaseColumn.isFavorite.value: isFavorite,
+    };
+  }
 }

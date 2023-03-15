@@ -1,24 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:zad/shared/localization/localizations.dart';
 
-void main() => runApp(const BottomSheetApp());
+import '../../shared/data/database/zad_database.dart';
+import '../../shared/data/models/lecture.dart';
 
-class BottomSheetApp extends StatelessWidget {
-  const BottomSheetApp({super.key});
+class LectureOptionsSheet extends StatelessWidget {
+  final Lecture lecture;
 
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(title: const Text('Bottom Sheet Sample')),
-        body: const BottomSheetExample(),
-      ),
-    );
-  }
-}
-
-class BottomSheetExample extends StatelessWidget {
-  const BottomSheetExample({super.key});
+  const LectureOptionsSheet({super.key, required this.lecture});
 
   @override
   Widget build(BuildContext context) {
@@ -71,7 +60,10 @@ class BottomSheetExample extends StatelessWidget {
                       ElevatedButton.icon(
                         style: ElevatedButton.styleFrom(
                             fixedSize: const Size(120, 34)),
-                        onPressed: () => Navigator.pop(context),
+                        onPressed: () {
+                          _addToFavorites();
+                          Navigator.pop(context);
+                        },
                         icon: const Icon(
                           Icons.favorite_border,
                           size: 18,
@@ -87,5 +79,10 @@ class BottomSheetExample extends StatelessWidget {
         },
       ),
     );
+  }
+
+  void _addToFavorites() async {
+    lecture.isFavorite = !lecture.isFavorite;
+    ZadDatabase().updateLecture(lecture);
   }
 }
