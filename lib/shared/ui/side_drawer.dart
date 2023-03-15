@@ -4,8 +4,8 @@ import 'package:zad/shared/ui/navigate_to.dart';
 
 import '../../screens/lectures_screen/lectures_screen.dart';
 import '../../sidemenu_option/about_screen.dart';
-import '../../sidemenu_option/search_screen.dart';
 import '../../sidemenu_option/references_screen.dart';
+import '../../sidemenu_option/search_screen.dart';
 import '../data/database/zad_database.dart';
 
 class SideDrawer extends StatelessWidget {

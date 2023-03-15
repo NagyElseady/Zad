@@ -1,10 +1,8 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:zad/sections/sections_screen.dart';
 import 'package:zad/shared/app/app.dart';
-import 'package:zad/shared/data/models/lecture.dart';
 import 'package:zad/shared/data/database/zad_database.dart';
 import 'package:zad/shared/ui/side_drawer.dart';
 

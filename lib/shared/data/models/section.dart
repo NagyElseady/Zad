@@ -1,7 +1,5 @@
 import 'package:flutter/cupertino.dart';
 
-import 'lecture.dart';
-
 class Section {
   int id;
   String title;

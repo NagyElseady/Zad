@@ -103,7 +103,8 @@ class ZadDatabase {
 
     late List<Map<String, dynamic>> title;
 
-    String where = '${DatabaseColumn.title.value} LIKE ? OR ${DatabaseColumn.details.value} LIKE ?';
+    String where =
+        '${DatabaseColumn.title.value} LIKE ? OR ${DatabaseColumn.details.value} LIKE ?';
     List<dynamic> whereArgs = ['%$text%', '%$text%'];
 
     await db?.transaction((txn) async {
