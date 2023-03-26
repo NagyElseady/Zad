@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:zad/shared/localization/localizations.dart';
 
 import '../../shared/data/database/zad_database.dart';
@@ -7,7 +8,7 @@ import '../../shared/data/models/lecture.dart';
 class LectureOptionsSheet extends StatelessWidget {
   final Lecture lecture;
 
-  const LectureOptionsSheet({super.key, required this.lecture});
+  LectureOptionsSheet({super.key, required this.lecture});
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +41,18 @@ class LectureOptionsSheet extends StatelessWidget {
                       ElevatedButton.icon(
                         style: ElevatedButton.styleFrom(
                             fixedSize: const Size(120, 34)),
-                        onPressed: () => Navigator.pop(context),
+                        onPressed: () => Clipboard.setData(
+                                ClipboardData(text: lecture.details.toString()))
+                            .then((_) {
+                          ScaffoldMessenger.of(context)
+                              .showSnackBar(const SnackBar(
+                            content: Text(
+                              'تم النسخ الى الحافظه',
+                              textAlign: TextAlign.center,
+                            ),
+                          ));
+                          Navigator.pop(context);
+                        }),
                         icon: const Icon(
                           Icons.copy,
                           size: 18,
@@ -50,12 +62,17 @@ class LectureOptionsSheet extends StatelessWidget {
                       ElevatedButton.icon(
                         style: ElevatedButton.styleFrom(
                             fixedSize: const Size(120, 34)),
-                        onPressed: () => Navigator.pop(context),
+                        onPressed: () {
+                          _updateLecture();
+                          Navigator.pop(context);
+                        },
                         icon: const Icon(
                           Icons.edit_calendar,
                           size: 18,
                         ),
-                        label: Text(localizations.bottom_title3),
+                        label: Text(
+                          localizations.bottom_title3,
+                        ),
                       ),
                       ElevatedButton.icon(
                         style: ElevatedButton.styleFrom(
@@ -83,6 +100,11 @@ class LectureOptionsSheet extends StatelessWidget {
 
   void _addToFavorites() async {
     lecture.isFavorite = !lecture.isFavorite;
+    ZadDatabase().updateLecture(lecture);
+  }
+
+  void _updateLecture() async {
+    lecture.details = 'NEW CONTENT HERE';
     ZadDatabase().updateLecture(lecture);
   }
 }

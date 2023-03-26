@@ -8,6 +8,7 @@ import 'package:zad/shared/ui/side_drawer.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
   await ZadDatabase().setup();
 
   runApp(
