@@ -1,132 +1,67 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:zad/shared/localization/localizations.dart';
 
 import '../../shared/data/database/zad_database.dart';
 import '../../shared/data/models/lecture.dart';
-import 'package:share_plus/share_plus.dart';
 
-class LectureOptionsSheet extends StatelessWidget {
-  final Lecture lecture;
+class EditLectureScreen extends StatefulWidget {
+  Lecture lecture;
 
-  const LectureOptionsSheet({super.key, required this.lecture});
+  EditLectureScreen(this.lecture, {Key? key}) : super(key: key);
+
+  @override
+  _EditLectureScreenState createState() => _EditLectureScreenState();
+}
+
+class _EditLectureScreenState extends State<EditLectureScreen> {
+  final TextEditingController _content = TextEditingController(text: '');
+
+  @override
+  void initState() {
+    super.initState();
+    _content.text = widget.lecture.details;
+  }
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: ElevatedButton(
-        child: const Icon(Icons.more_vert_outlined),
-        onPressed: () {
-          _showSheet(context);
-        },
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.teal,
+        centerTitle: true,
+        title: Text(localizations.drawer_titleM),
       ),
-    );
-  }
-
-  // TODO: separate every button to a function
-  void _showSheet(BuildContext context) {
-    showModalBottomSheet<void>(
-      context: context,
-      builder: (BuildContext context) {
-        return Container(
-          height: 200,
-          color: Colors.white,
-          child: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              mainAxisSize: MainAxisSize.min,
-              children: <Widget>[
-                _shareButton(context),
-                _copyButton(context),
-                ElevatedButton.icon(
-                  style:
-                      ElevatedButton.styleFrom(fixedSize: const Size(120, 34)),
-                  onPressed: () {
-                    _updateLecture();
-                    Navigator.pop(context);
-                  },
-                  icon: const Icon(
-                    Icons.edit_calendar,
-                    size: 18,
-                  ),
-                  label: Text(
-                    localizations.bottom_title3,
-                  ),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 20),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              _submitButton(),
+              TextFormField(
+                controller: _content,
+                decoration: const InputDecoration(
                 ),
-                ElevatedButton.icon(
-                  style:
-                      ElevatedButton.styleFrom(fixedSize: const Size(120, 34)),
-                  onPressed: () {
-                    _addToFavorites();
-                    Navigator.pop(context);
-                  },
-                  icon: const Icon(
-                    Icons.favorite_border,
-                    size: 18,
-                  ),
-                  label: Text(localizations.bottom_title4),
-                ),
-              ],
-            ),
+                maxLines: null,
+              )
+            ],
           ),
-        );
-      },
-    );
-  }
-
-  Widget _shareButton(BuildContext context) {
-    return ElevatedButton.icon(
-      style: ElevatedButton.styleFrom(
-        fixedSize: const Size(120, 34),
-      ),
-      onPressed: () {
-        _share(context);
-      },
-      icon: const Icon(
-        Icons.share_outlined,
-        size: 20,
-      ),
-      label: Text(localizations.bottom_title1),
-    );
-  }
-
-  void _share(BuildContext context) {
-    Share.share(lecture.details, subject: lecture.title);
-  }
-
-  Widget _copyButton(BuildContext context) {
-    return ElevatedButton.icon(
-      style: ElevatedButton.styleFrom(fixedSize: const Size(120, 34)),
-      onPressed: () {
-        _copy(context);
-      },
-      icon: const Icon(
-        Icons.copy,
-        size: 18,
-      ),
-      label: Text(localizations.bottom_title2),
-    );
-  }
-
-  void _copy(BuildContext context) {
-    Clipboard.setData(ClipboardData(text: lecture.details)).then((_) {
-      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-        content: Text(
-          localizations.copy,
-          textAlign: TextAlign.center,
         ),
-      ));
-      Navigator.pop(context);
-    });
+      ),
+      resizeToAvoidBottomInset: false,
+    );
   }
 
-  void _addToFavorites() async {
-    lecture.isFavorite = !lecture.isFavorite;
-    ZadDatabase().updateLecture(lecture);
+  Widget _submitButton() {
+    return ElevatedButton(
+      // TODO: localize
+      child: const Text('حفظ'),
+      onPressed: () {
+        _updateLecture();
+      },
+    );
   }
 
   void _updateLecture() async {
-    lecture.details = 'NEW CONTENT HERE';
-    ZadDatabase().updateLecture(lecture);
+    widget.lecture.details = _content.text;
+    ZadDatabase().updateLecture(widget.lecture);
   }
 }

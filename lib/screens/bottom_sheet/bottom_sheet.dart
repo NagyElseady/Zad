@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:share_plus/share_plus.dart';
+import 'package:zad/screens/edit_lecture/edit_lecture.dart';
 import 'package:zad/shared/localization/localizations.dart';
+import 'package:zad/shared/ui/navigate_to.dart';
 
 import '../../shared/data/database/zad_database.dart';
 import '../../shared/data/models/lecture.dart';
-import 'package:share_plus/share_plus.dart';
 
 class LectureOptionsSheet extends StatelessWidget {
   final Lecture lecture;
@@ -42,11 +44,11 @@ class LectureOptionsSheet extends StatelessWidget {
                   style:
                       ElevatedButton.styleFrom(fixedSize: const Size(120, 34)),
                   onPressed: () {
-                    _updateLecture();
                     Navigator.pop(context);
+                    _updateLecture();
                   },
                   icon: const Icon(
-                    Icons.edit_calendar,
+                    Icons.edit,
                     size: 18,
                   ),
                   label: Text(
@@ -126,7 +128,6 @@ class LectureOptionsSheet extends StatelessWidget {
   }
 
   void _updateLecture() async {
-    lecture.details = 'NEW CONTENT HERE';
-    ZadDatabase().updateLecture(lecture);
+    navigate(EditLectureScreen(lecture));
   }
 }
