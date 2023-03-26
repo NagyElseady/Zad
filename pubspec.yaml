@@ -55,6 +55,7 @@ dependencies:
   url_launcher: ^6.1.10
   flutter_localization: ^0.1.10
   intl_utils: ^2.8.1
+  share_plus: ^6.3.1
   flutter_localizations:
     sdk: flutter
   intl: any
