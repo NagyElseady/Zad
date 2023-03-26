@@ -25,10 +25,9 @@ class SearchScreen extends StatelessWidget {
             onEditingComplete: () {
               _showSearchResults();
             },
-            decoration: const InputDecoration(
-              // TODO: localize
-              labelText: 'كلمة البحث',
-              border: OutlineInputBorder(),
+            decoration: InputDecoration(
+              labelText: localizations.search,
+              border: const OutlineInputBorder(),
             ),
           ),
         ));

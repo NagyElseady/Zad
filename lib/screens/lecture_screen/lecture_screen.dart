@@ -31,9 +31,11 @@ class LectureScreen extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(20.0),
       child: SingleChildScrollView(
-        child: Text(
+        child: SelectableText(
           lecture.details,
-          overflow: TextOverflow.visible,
+          toolbarOptions: const ToolbarOptions(
+            copy: true,
+          ),
         ),
       ),
     );

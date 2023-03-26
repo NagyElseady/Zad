@@ -42,12 +42,11 @@ class LectureOptionsSheet extends StatelessWidget {
                         style: ElevatedButton.styleFrom(
                             fixedSize: const Size(120, 34)),
                         onPressed: () => Clipboard.setData(
-                                ClipboardData(text: lecture.details.toString()))
+                                ClipboardData(text: lecture.details))
                             .then((_) {
-                          ScaffoldMessenger.of(context)
-                              .showSnackBar(const SnackBar(
+                          ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                             content: Text(
-                              'تم النسخ الى الحافظه',
+                              localizations.copy,
                               textAlign: TextAlign.center,
                             ),
                           ));
