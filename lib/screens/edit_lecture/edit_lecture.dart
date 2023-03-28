@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:zad/shared/localization/localizations.dart';
+import 'package:zad/shared/ui/toast.dart';
 
 import '../../shared/data/database/zad_database.dart';
 import '../../shared/data/models/lecture.dart';
@@ -36,12 +37,16 @@ class _EditLectureScreenState extends State<EditLectureScreen> {
           child: Column(
             children: [
               _submitButton(),
+              const SizedBox(
+                height: 15,
+              ),
               TextFormField(
                 controller: _content,
                 decoration: const InputDecoration(
+                  border: OutlineInputBorder(),
                 ),
                 maxLines: null,
-              )
+              ),
             ],
           ),
         ),
@@ -51,12 +56,21 @@ class _EditLectureScreenState extends State<EditLectureScreen> {
   }
 
   Widget _submitButton() {
-    return ElevatedButton(
-      // TODO: localize
-      child: const Text('حفظ'),
-      onPressed: () {
-        _updateLecture();
-      },
+    return Container(
+      width: 150,
+      color: Colors.teal,
+      child: ElevatedButton(
+        child: Text(
+          localizations.save,
+          style: const TextStyle(
+            color: Colors.white,
+          ),
+        ),
+        onPressed: () {
+          _updateLecture();
+          showToast(text: (localizations.save_toast));
+        },
+      ),
     );
   }
 

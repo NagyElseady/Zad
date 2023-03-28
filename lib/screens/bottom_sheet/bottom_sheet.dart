@@ -17,7 +17,9 @@ class LectureOptionsSheet extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: ElevatedButton(
-        child: const Icon(Icons.more_vert_outlined),
+        child: const Icon(
+          Icons.more_vert_outlined,
+        ),
         onPressed: () {
           _showSheet(context);
         },
@@ -25,7 +27,6 @@ class LectureOptionsSheet extends StatelessWidget {
     );
   }
 
-  // TODO: separate every button to a function
   void _showSheet(BuildContext context) {
     showModalBottomSheet<void>(
       context: context,
@@ -40,40 +41,55 @@ class LectureOptionsSheet extends StatelessWidget {
               children: <Widget>[
                 _shareButton(context),
                 _copyButton(context),
-                ElevatedButton.icon(
-                  style:
-                      ElevatedButton.styleFrom(fixedSize: const Size(120, 34)),
-                  onPressed: () {
-                    Navigator.pop(context);
-                    _updateLecture();
-                  },
-                  icon: const Icon(
-                    Icons.edit,
-                    size: 18,
-                  ),
-                  label: Text(
-                    localizations.bottom_title3,
-                  ),
-                ),
-                ElevatedButton.icon(
-                  style:
-                      ElevatedButton.styleFrom(fixedSize: const Size(120, 34)),
-                  onPressed: () {
-                    _addToFavorites();
-                    Navigator.pop(context);
-                  },
-                  icon: const Icon(
-                    Icons.favorite_border,
-                    size: 18,
-                  ),
-                  label: Text(localizations.bottom_title4),
-                ),
+                _editButton(context),
+                _favoriteButton(context),
               ],
             ),
           ),
         );
       },
     );
+  }
+
+  Widget _favoriteButton(BuildContext context) {
+    return ElevatedButton.icon(
+      style: ElevatedButton.styleFrom(fixedSize: const Size(120, 34)),
+      onPressed: () {
+        _addToFavorites();
+        Navigator.pop(context);
+      },
+      icon: const Icon(
+        Icons.favorite_border,
+        size: 18,
+      ),
+      label: Text(localizations.bottom_title4),
+    );
+  }
+
+  void _addToFavorites() async {
+    lecture.isFavorite = !lecture.isFavorite;
+    ZadDatabase().updateLecture(lecture);
+  }
+
+  Widget _editButton(BuildContext context) {
+    return ElevatedButton.icon(
+      style: ElevatedButton.styleFrom(fixedSize: const Size(120, 34)),
+      onPressed: () {
+        Navigator.pop(context);
+        _updateLecture();
+      },
+      icon: const Icon(
+        Icons.edit,
+        size: 18,
+      ),
+      label: Text(
+        localizations.bottom_title3,
+      ),
+    );
+  }
+
+  void _updateLecture() async {
+    navigate(EditLectureScreen(lecture));
   }
 
   Widget _shareButton(BuildContext context) {
@@ -120,14 +136,5 @@ class LectureOptionsSheet extends StatelessWidget {
       ));
       Navigator.pop(context);
     });
-  }
-
-  void _addToFavorites() async {
-    lecture.isFavorite = !lecture.isFavorite;
-    ZadDatabase().updateLecture(lecture);
-  }
-
-  void _updateLecture() async {
-    navigate(EditLectureScreen(lecture));
   }
 }
