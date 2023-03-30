@@ -109,7 +109,6 @@ class SectionsScreen extends StatelessWidget {
     );
   }
 
-  // TODO: Reuse this widget in all cells
   Widget cellView(BuildContext context, Section section) {
     return Container(
       decoration: BoxDecoration(
