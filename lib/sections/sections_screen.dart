@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../screens/lectures_screen/lectures_screen.dart';
-import '../screens/sections_screen/section_cubit.dart';
-import '../screens/zad_states.dart';
+import '../screens/lectures/lectures_screen.dart';
 import '../shared/data/database/zad_database.dart';
 import '../shared/data/models/section.dart';
 import '../shared/localization/localizations.dart';
@@ -77,15 +74,9 @@ class SectionsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-        create: (BuildContext context) => ZadCubit(),
-        child: BlocConsumer<ZadCubit, ZadStates>(
-            listener: (context, state) {},
-            builder: (context, state) {
-              return Scaffold(
-                body: screenView(context),
-              );
-            }));
+    return Scaffold(
+      body: screenView(context),
+    );
   }
 
   Widget screenView(BuildContext context) {

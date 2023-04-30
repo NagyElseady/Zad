@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:zad/shared/localization/localizations.dart';
 
-import '../lectures_screen/lectures_screen.dart';
+import '../lectures/lectures_screen.dart';
 import '../../shared/data/database/zad_database.dart';
 import '../../shared/ui/navigate_to.dart';
 

@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:zad/shared/localization/localizations.dart';
 import 'package:zad/shared/ui/navigate_to.dart';
 
-import '../../screens/lectures_screen/lectures_screen.dart';
+import '../../screens/lectures/lectures_screen.dart';
 import '../../screens/search_lectures/search_screen.dart';
-import '../../sidemenu_option/about_screen.dart';
-import '../../sidemenu_option/references_screen.dart';
+import '../../screens/about/about_screen.dart';
+import '../../screens/refrences/references_screen.dart';
 import '../data/database/zad_database.dart';
 
 class SideDrawer extends StatelessWidget {

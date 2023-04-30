@@ -3,7 +3,7 @@ import 'package:zad/screens/bottom_sheet/bottom_sheet.dart';
 
 import '../../shared/data/models/lecture.dart';
 import '../../shared/ui/navigate_to.dart';
-import '../lecture_screen/lecture_screen.dart';
+import '../lecture/lecture_screen.dart';
 
 class LecturesScreen extends StatelessWidget {
   final List<Lecture> lectures;
