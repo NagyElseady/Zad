@@ -7,6 +7,7 @@ import 'package:path_provider/path_provider.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:zad/shared/data/models/lecture.dart';
 
+import '../../core/result/result.dart';
 import '../models/database_column.dart';
 
 class ZadDatabase {
@@ -52,9 +53,10 @@ class ZadDatabase {
     return list.map((e) => Lecture.from(e)).toList();
   }
 
-  Future<List<Lecture>> lecturesBySectionId(int id) async {
+  Future<Result<List<Lecture>>> lecturesBySectionId(int id) async {
     if (db == null) {
-      throw "bd is not initiated, initiate using [init(db)] function";
+      return Result.failure(AppFailure(
+          "bd is not initiated, initiate using [init(db)] function"));
     }
 
     late List<Map<String, dynamic>> title;
@@ -71,7 +73,8 @@ class ZadDatabase {
       );
     });
 
-    return title.map((e) => Lecture.from(e)).toList();
+    final result = title.map((e) => Lecture.from(e)).toList();
+    return Result.success(result);
   }
 
   Future<List<Lecture>> favoriteLectures() async {

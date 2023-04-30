@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:zad/shared/localization/localizations.dart';
-import 'package:zad/shared/ui/toast.dart';
+import 'package:zad/shared/presentation/toast.dart';
 
 import '../../shared/data/database/zad_database.dart';
 import '../../shared/data/models/lecture.dart';

@@ -3,7 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:zad/screens/edit_lecture/edit_lecture.dart';
 import 'package:zad/shared/localization/localizations.dart';
-import 'package:zad/shared/ui/navigate_to.dart';
+import 'package:zad/shared/presentation/navigate_to.dart';
 
 import '../../shared/data/database/zad_database.dart';
 import '../../shared/data/models/lecture.dart';

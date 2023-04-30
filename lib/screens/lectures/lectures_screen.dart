@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:zad/screens/bottom_sheet/bottom_sheet.dart';
 
 import '../../shared/data/models/lecture.dart';
-import '../../shared/ui/navigate_to.dart';
+import '../../shared/presentation/navigate_to.dart';
 import '../lecture/lecture_screen.dart';
 
 class LecturesScreen extends StatelessWidget {

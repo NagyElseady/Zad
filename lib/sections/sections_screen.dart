@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:zad/shared/presentation/controller/lectures_bloc.dart';
 
 import '../screens/lectures/lectures_screen.dart';
-import '../shared/data/database/zad_database.dart';
 import '../shared/data/models/section.dart';
 import '../shared/localization/localizations.dart';
-import '../shared/ui/navigate_to.dart';
+import '../shared/presentation/navigate_to.dart';
 
 class SectionsScreen extends StatelessWidget {
   SectionsScreen({Key? key}) : super(key: key);
@@ -125,7 +126,7 @@ class SectionsScreen extends StatelessWidget {
                   size: 100.0,
                 ),
                 onPressed: () {
-                  _onSectionItemTapped(section);
+                  _onSectionItemTapped(context, section);
                 },
               ),
             ),
@@ -154,10 +155,12 @@ class SectionsScreen extends StatelessWidget {
     );
   }
 
-  void _onSectionItemTapped(Section section) async {
-    final lectures = await ZadDatabase().lecturesBySectionId(section.id);
+  void _onSectionItemTapped(BuildContext context, Section section) async {
+    final lectures =
+        await context.read<LecturesBloc>().lecturesBySectionId(section.id);
+    lectures.dataOrElse([]);
     navigate(LecturesScreen(
-      lectures: lectures,
+      lectures: lectures.dataOrElse([]),
       title: section.title,
     ));
   }

@@ -185,8 +185,8 @@ class AboutScreen extends StatelessWidget {
     final InAppReview inAppReview = InAppReview.instance;
 
     inAppReview.openStoreListing(
-      appStoreId: 'com.idea.zad.zad',
-      microsoftStoreId: 'com.idea.zad.zad',
+      appStoreId: 'com.idea.zad',
+      microsoftStoreId: 'com.idea.zad',
     );
   }
 

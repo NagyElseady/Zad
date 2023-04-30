@@ -3,7 +3,7 @@ import 'package:zad/shared/localization/localizations.dart';
 
 import '../lectures/lectures_screen.dart';
 import '../../shared/data/database/zad_database.dart';
-import '../../shared/ui/navigate_to.dart';
+import '../../shared/presentation/navigate_to.dart';
 
 class SearchScreen extends StatelessWidget {
   final TextEditingController _searchText = TextEditingController(text: '');

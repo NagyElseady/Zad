@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:zad/shared/localization/localizations.dart';
-import 'package:zad/shared/ui/navigate_to.dart';
+import 'package:zad/shared/presentation/navigate_to.dart';
 
 import '../../screens/lectures/lectures_screen.dart';
 import '../../screens/search_lectures/search_screen.dart';
