@@ -23,16 +23,30 @@ class LecturesScreen extends StatelessWidget {
         centerTitle: true,
         title: Text(title),
       ),
-      body: ListView.builder(
-          itemCount: lectures.length,
-          itemBuilder: (context, index) {
-            return ListTile(
-              title: itemView(
-                context,
-                lectures[index],
-              ),
-            );
-          }),
+      body: ListView.separated(
+        itemCount: lectures.length,
+        itemBuilder: (context, index) {
+          return ListTile(
+            title: itemView(
+              context,
+              lectures[index],
+            ),
+          );
+        },
+        separatorBuilder: (BuildContext context, int index) {
+          return Padding(
+            padding: const EdgeInsetsDirectional.only(
+              start: 20.0,
+              end: 20.0,
+            ),
+            child: Container(
+              width: double.infinity,
+              height: 1.0,
+              color: Colors.grey,
+            ),
+          );
+        },
+      ),
     );
   }
 
