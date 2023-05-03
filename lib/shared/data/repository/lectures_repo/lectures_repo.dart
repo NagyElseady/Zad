@@ -15,5 +15,7 @@ class LecturesRepo extends BaseLecturesRepository {
   }
 
   @override
-  void updateLecture(Lecture item) async {}
+  void updateLecture(Lecture item) async {
+    return localSrc.updateLecture(item);
+  }
 }

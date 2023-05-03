@@ -12,5 +12,7 @@ class LecturesLocalDartSrc {
     return db.lecturesBySectionId(id);
   }
 
-  void updateLecture(Lecture item) async {}
+  void updateLecture(Lecture item) async {
+    return db.updateLecture(item);
+  }
 }

@@ -2,26 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:zad/shared/localization/localizations.dart';
 import 'package:zad/shared/presentation/toast.dart';
 
-import '../../shared/data/database/zad_database.dart';
 import '../../shared/data/models/lecture.dart';
+import '../../shared/presentation/controller/lectures_bloc.dart';
 
-class EditLectureScreen extends StatefulWidget {
+class EditLectureScreen extends StatelessWidget {
   Lecture lecture;
 
   EditLectureScreen(this.lecture, {Key? key}) : super(key: key);
 
-  @override
-  _EditLectureScreenState createState() => _EditLectureScreenState();
-}
-
-class _EditLectureScreenState extends State<EditLectureScreen> {
   final TextEditingController _content = TextEditingController(text: '');
-
-  @override
-  void initState() {
-    super.initState();
-    _content.text = widget.lecture.details;
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +18,7 @@ class _EditLectureScreenState extends State<EditLectureScreen> {
       appBar: AppBar(
         backgroundColor: Colors.teal,
         centerTitle: true,
-        title: Text(localizations.drawer_titleM),
+        title: const Text(""),
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 20),
@@ -67,15 +56,16 @@ class _EditLectureScreenState extends State<EditLectureScreen> {
           ),
         ),
         onPressed: () {
-          _updateLecture();
+          _updateLecture(_content);
           showToast(text: (localizations.save_toast));
         },
       ),
     );
   }
 
-  void _updateLecture() async {
-    widget.lecture.details = _content.text;
-    ZadDatabase().updateLecture(widget.lecture);
+  void _updateLecture(context) async {
+    final lectures =
+        await context.read<LecturesBloc>().updateLecture(lecture.details);
+    lectures.dataOrElse([]).details;
   }
 }

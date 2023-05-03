@@ -20,9 +20,13 @@ class LecturesBloc extends Bloc<LecturesEvent, LectureState> {
 
   LecturesBloc(
     this.lecturesRepo,
-  ) : super(const LectureState()) {}
+  ) : super(const LectureState());
 
   Future<Result<List<Lecture>>> lecturesBySectionId(int id) async {
     return lecturesRepo.lecturesBySectionId(id);
+  }
+
+  Future<void> updateLecture(Lecture item) async {
+    return lecturesRepo.updateLecture(item);
   }
 }
