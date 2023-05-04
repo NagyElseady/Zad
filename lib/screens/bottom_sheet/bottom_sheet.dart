@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:share_plus/share_plus.dart';
-import 'package:zad/screens/edit_lecture/edit_lecture.dart';
+import 'package:zad/screens/edit_lecture/edit_lecture_screen.dart';
 import 'package:zad/shared/localization/localizations.dart';
 import 'package:zad/shared/presentation/navigate_to.dart';
 

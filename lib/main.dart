@@ -39,7 +39,7 @@ class MyApp extends StatelessWidget {
         fontFamily: 'Cairo',
       ),
       navigatorKey: App.navigatorKey,
-      home: const HomePage(),
+      home: const HomeScreen(),
       debugShowCheckedModeBanner: false,
       localizationsDelegates: const [
         AppLocalizations.delegate,
@@ -54,8 +54,8 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
