@@ -19,7 +19,13 @@ class LecturesRepo extends BaseLecturesRepository {
     return localSrc.updateLecture(item);
   }
 
+  @override
   Future<List<Lecture>> searchResult(String text) async {
     return localSrc.searchResult(text);
+  }
+
+  @override
+  Future<List<Lecture>> favoriteLectures() {
+    return localSrc.favoriteLectures();
   }
 }

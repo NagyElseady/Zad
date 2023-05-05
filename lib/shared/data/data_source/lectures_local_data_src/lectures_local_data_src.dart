@@ -19,4 +19,8 @@ class LecturesLocalDartSrc {
   Future<List<Lecture>> searchResult(String text) async {
     return db.search(text);
   }
+
+  Future<List<Lecture>> favoriteLectures() {
+    return db.favoriteLectures();
+  }
 }

@@ -8,4 +8,8 @@ abstract class BaseLecturesRepository {
   }
 
   void updateLecture(Lecture item);
+
+  Future<List<Lecture>> searchResult(String text);
+
+  Future<List<Lecture>> favoriteLectures();
 }

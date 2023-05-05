@@ -33,4 +33,8 @@ class LecturesBloc extends Bloc<LecturesEvent, LectureState> {
   Future<List<Lecture>> searchResult(String text) async {
     return lecturesRepo.searchResult(text);
   }
+
+  Future<List<Lecture>> favoriteLectures() async {
+    return lecturesRepo.favoriteLectures();
+  }
 }
