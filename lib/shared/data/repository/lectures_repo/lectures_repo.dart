@@ -18,4 +18,8 @@ class LecturesRepo extends BaseLecturesRepository {
   void updateLecture(Lecture item) async {
     return localSrc.updateLecture(item);
   }
+
+  Future<List<Lecture>> searchResult(String text) async {
+    return localSrc.searchResult(text);
+  }
 }

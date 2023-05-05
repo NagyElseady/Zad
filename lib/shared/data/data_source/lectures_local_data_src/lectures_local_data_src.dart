@@ -15,4 +15,8 @@ class LecturesLocalDartSrc {
   void updateLecture(Lecture item) async {
     return db.updateLecture(item);
   }
+
+  Future<List<Lecture>> searchResult(String text) async {
+    return db.search(text);
+  }
 }

@@ -29,4 +29,8 @@ class LecturesBloc extends Bloc<LecturesEvent, LectureState> {
   Future<void> updateLecture(Lecture item) async {
     return lecturesRepo.updateLecture(item);
   }
+
+  Future<List<Lecture>> searchResult(String text) async {
+    return lecturesRepo.searchResult(text);
+  }
 }
