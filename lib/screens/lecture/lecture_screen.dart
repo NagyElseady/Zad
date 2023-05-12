@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../shared/data/models/lecture.dart';
-import '../bottom_sheet/bottom_sheet.dart';
+import '../bottom_sheet/lecture_options_sheet.dart';
 
 class LectureScreen extends StatelessWidget {
   final Lecture lecture;

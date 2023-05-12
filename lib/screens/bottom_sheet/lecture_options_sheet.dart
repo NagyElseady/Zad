@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:zad/screens/edit_lecture/edit_lecture_screen.dart';
 import 'package:zad/shared/localization/localizations.dart';
 import 'package:zad/shared/presentation/navigate_to.dart';
 
-import '../../shared/data/database/zad_database.dart';
+import '../../shared/core/services/services_locator.dart';
 import '../../shared/data/models/lecture.dart';
+import '../../shared/presentation/controller/lectures_bloc.dart';
 
 class LectureOptionsSheet extends StatelessWidget {
   final Lecture lecture;
@@ -15,16 +17,29 @@ class LectureOptionsSheet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: ElevatedButton(
-        child: const Icon(
-          Icons.more_vert_outlined,
-        ),
-        onPressed: () {
-          _showSheet(context);
-        },
-      ),
-    );
+    return BlocProvider(
+        create: (BuildContext context) => locator<LecturesBloc>(),
+        child: Scaffold(
+          appBar: AppBar(
+            backgroundColor: Colors.teal,
+            centerTitle: true,
+            title: const Text(""),
+          ),
+          body: Builder(
+            builder: (BuildContext context) {
+              return Center(
+                child: ElevatedButton(
+                  child: const Icon(
+                    Icons.more_vert_outlined,
+                  ),
+                  onPressed: () {
+                    _showSheet(context);
+                  },
+                ),
+              );
+            },
+          ),
+        ));
   }
 
   void _showSheet(BuildContext context) {
@@ -55,7 +70,7 @@ class LectureOptionsSheet extends StatelessWidget {
     return ElevatedButton.icon(
       style: ElevatedButton.styleFrom(fixedSize: const Size(120, 34)),
       onPressed: () {
-        _addToFavorites();
+        _addToFavorites(context);
         Navigator.pop(context);
       },
       icon: const Icon(
@@ -66,9 +81,9 @@ class LectureOptionsSheet extends StatelessWidget {
     );
   }
 
-  void _addToFavorites() async {
+  void _addToFavorites(BuildContext context) async {
     lecture.isFavorite = !lecture.isFavorite;
-    ZadDatabase().updateLecture(lecture);
+    await context.read<LecturesBloc>().updateLecture(lecture);
   }
 
   Widget _editButton(BuildContext context) {
