@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:zad/shared/presentation/controller/lectures_bloc.dart';
 
 import '../screens/lectures/lectures_screen.dart';
+import '../shared/app/app.dart';
 import '../shared/data/models/section.dart';
 import '../shared/localization/localizations.dart';
 import '../shared/presentation/navigate_to.dart';
@@ -157,7 +158,7 @@ class SectionsScreen extends StatelessWidget {
 
   void _onSectionItemTapped(BuildContext context, Section section) async {
     final lectures =
-        await context.read<LecturesBloc>().lecturesBySectionId(section.id);
+        await App.navigatorKey.currentContext!.read<LecturesBloc>().lecturesBySectionId(section.id);
     lectures.dataOrElse([]);
     navigate(LecturesScreen(
       lectures: lectures.dataOrElse([]),

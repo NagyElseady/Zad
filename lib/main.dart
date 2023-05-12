@@ -61,16 +61,14 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-        create: (BuildContext context) => locator<LecturesBloc>(),
-        child: Scaffold(
-          appBar: AppBar(
-            centerTitle: true,
-            title: Text(AppLocalizations.of(context).title),
-            backgroundColor: Colors.teal,
-          ),
-          drawer: const SideDrawer(),
-          body: SectionsScreen(),
-        ));
+    return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        title: Text(AppLocalizations.of(context).title),
+        backgroundColor: Colors.teal,
+      ),
+      drawer: const SideDrawer(),
+      body: SectionsScreen(),
+    );
   }
 }

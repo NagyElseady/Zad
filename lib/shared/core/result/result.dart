@@ -2,7 +2,6 @@
 /// The code below was inspired by my swift implementation https://gist.github.com/CassiusPacheco/4378d30d69316e4a6ba28a0c3af72628
 /// and Avdosev's Dart Either https://github.com/avdosev/either_dart/blob/master/lib/src/either.dart
 /// Reference: https://gist.github.com/CassiusPacheco/409e66e220ce563440df00385f39ac98
-
 import 'package:equatable/equatable.dart';
 
 abstract class Failure extends Equatable implements Exception {
