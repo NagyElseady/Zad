@@ -6,7 +6,7 @@ import 'package:zad/screens/edit_lecture/edit_lecture_screen.dart';
 import 'package:zad/shared/localization/localizations.dart';
 import 'package:zad/shared/presentation/navigate_to.dart';
 
-import '../../shared/core/services/services_locator.dart';
+import '../../shared/app/app.dart';
 import '../../shared/data/models/lecture.dart';
 import '../../shared/presentation/controller/lectures_bloc.dart';
 
@@ -17,29 +17,14 @@ class LectureOptionsSheet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-        create: (BuildContext context) => locator<LecturesBloc>(),
-        child: Scaffold(
-          appBar: AppBar(
-            backgroundColor: Colors.teal,
-            centerTitle: true,
-            title: const Text(""),
-          ),
-          body: Builder(
-            builder: (BuildContext context) {
-              return Center(
-                child: ElevatedButton(
-                  child: const Icon(
-                    Icons.more_vert_outlined,
-                  ),
-                  onPressed: () {
-                    _showSheet(context);
-                  },
-                ),
-              );
-            },
-          ),
-        ));
+    return ElevatedButton(
+      child: const Icon(
+        Icons.more_vert_outlined,
+      ),
+      onPressed: () {
+        _showSheet(context);
+      },
+    );
   }
 
   void _showSheet(BuildContext context) {
@@ -83,7 +68,9 @@ class LectureOptionsSheet extends StatelessWidget {
 
   void _addToFavorites(BuildContext context) async {
     lecture.isFavorite = !lecture.isFavorite;
-    await context.read<LecturesBloc>().updateLecture(lecture);
+    await App.navigatorKey.currentContext!
+        .read<LecturesBloc>()
+        .updateLecture(lecture);
   }
 
   Widget _editButton(BuildContext context) {
