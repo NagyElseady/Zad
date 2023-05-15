@@ -19,7 +19,7 @@ class SearchScreen extends StatelessWidget {
       child: TextFormField(
         controller: _searchText,
         onEditingComplete: () {
-          _showSearchResults(context, _searchText.text);
+          _showSearchResults(_searchText.text);
         },
         decoration: InputDecoration(
           labelText: localizations.search,
@@ -29,7 +29,7 @@ class SearchScreen extends StatelessWidget {
     );
   }
 
-  void _showSearchResults(BuildContext context, String text) async {
+  void _showSearchResults(String text) async {
     final lectures =
         await App.context.read<LecturesBloc>().searchResult(_searchText.text);
     navigate(LecturesScreen(

@@ -127,7 +127,7 @@ class SectionsScreen extends StatelessWidget {
                   size: 100.0,
                 ),
                 onPressed: () {
-                  _onSectionItemTapped(context, section);
+                  _onSectionItemTapped(section);
                 },
               ),
             ),
@@ -156,7 +156,7 @@ class SectionsScreen extends StatelessWidget {
     );
   }
 
-  void _onSectionItemTapped(BuildContext context, Section section) async {
+  void _onSectionItemTapped(Section section) async {
     final lectures =
         await App.context.read<LecturesBloc>().lecturesBySectionId(section.id);
     lectures.dataOrElse([]);

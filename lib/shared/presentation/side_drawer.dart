@@ -62,7 +62,7 @@ class SideDrawer extends StatelessWidget {
               textAlign: TextAlign.right,
             ),
             onTap: () {
-              _showFavorites(context);
+              _showFavorites();
             },
           ),
           ListTile(
@@ -92,7 +92,7 @@ class SideDrawer extends StatelessWidget {
     );
   }
 
-  void _showFavorites(BuildContext context) async {
+  void _showFavorites() async {
     final lectures = await App.context.read<LecturesBloc>().favoriteLectures();
     navigate(LecturesScreen(
       lectures: lectures,
