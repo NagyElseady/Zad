@@ -38,7 +38,7 @@ class _EditLectureScreenState extends State<EditLectureScreen> {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              _submitButton(context),
+              _submitButton(),
               const SizedBox(
                 height: 15,
               ),
@@ -56,7 +56,7 @@ class _EditLectureScreenState extends State<EditLectureScreen> {
     );
   }
 
-  Widget _submitButton(BuildContext context) {
+  Widget _submitButton() {
     return Container(
       width: 150,
       color: Colors.teal,
@@ -68,16 +68,16 @@ class _EditLectureScreenState extends State<EditLectureScreen> {
           ),
         ),
         onPressed: () {
-          _updateLecture(context);
+          _updateLecture();
           showToast(text: (localizations.save_toast));
         },
       ),
     );
   }
 
-  void _updateLecture(BuildContext context) async {
+  void _updateLecture() async {
     widget.lecture.details = _content.text;
-    await App.navigatorKey.currentContext!
+    await App.context
         .read<LecturesBloc>()
         .updateLecture(widget.lecture);
   }

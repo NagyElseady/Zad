@@ -31,7 +31,7 @@ class SearchScreen extends StatelessWidget {
 
   void _showSearchResults(BuildContext context, String text) async {
     final lectures =
-        await App.navigatorKey.currentContext!.read<LecturesBloc>().searchResult(_searchText.text);
+        await App.context.read<LecturesBloc>().searchResult(_searchText.text);
     navigate(LecturesScreen(
       lectures: lectures,
       title: localizations.drawer_titleM,

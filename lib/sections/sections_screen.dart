@@ -158,7 +158,7 @@ class SectionsScreen extends StatelessWidget {
 
   void _onSectionItemTapped(BuildContext context, Section section) async {
     final lectures =
-        await App.navigatorKey.currentContext!.read<LecturesBloc>().lecturesBySectionId(section.id);
+        await App.context.read<LecturesBloc>().lecturesBySectionId(section.id);
     lectures.dataOrElse([]);
     navigate(LecturesScreen(
       lectures: lectures.dataOrElse([]),

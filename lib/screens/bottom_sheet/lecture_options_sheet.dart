@@ -68,7 +68,7 @@ class LectureOptionsSheet extends StatelessWidget {
 
   void _addToFavorites(BuildContext context) async {
     lecture.isFavorite = !lecture.isFavorite;
-    await App.navigatorKey.currentContext!
+    await App.context
         .read<LecturesBloc>()
         .updateLecture(lecture);
   }

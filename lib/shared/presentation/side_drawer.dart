@@ -93,7 +93,7 @@ class SideDrawer extends StatelessWidget {
   }
 
   void _showFavorites(BuildContext context) async {
-    final lectures = await App.navigatorKey.currentContext!.read<LecturesBloc>().favoriteLectures();
+    final lectures = await App.context.read<LecturesBloc>().favoriteLectures();
     navigate(LecturesScreen(
       lectures: lectures,
       title: localizations.bottom_title4,
