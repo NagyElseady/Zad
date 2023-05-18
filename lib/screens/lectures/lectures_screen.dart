@@ -67,14 +67,16 @@ class LecturesScreen extends StatelessWidget {
                 children: [
                   Text(
                     item.title,
+                    textAlign: TextAlign.center,
                     style: const TextStyle(
-                      color: Colors.black,
-                      fontSize: 30.0,
+                      color: Colors.black54,
+                      fontSize: 20.0,
                     ),
                   ),
                   Text(
                     style: const TextStyle(
-                      color: Colors.black,
+                      color: Colors.black45,
+                      fontSize: 13.0,
                     ),
                     item.details,
                     maxLines: 5,
@@ -83,7 +85,7 @@ class LecturesScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(
-              width: 30.0,
+              width: 5.0,
             ),
             LectureOptionsSheet(lecture: item),
           ],
