@@ -116,7 +116,8 @@ class AboutScreen extends StatelessWidget {
   }
 
   void appUrl(BuildContext context) {
-    const url = '';
+    const url =
+        'https://play.google.com/store/apps/developer?id=IdeaS0ft&hl=en&gl=US';
     launchURL(url);
   }
 
