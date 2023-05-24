@@ -78,7 +78,7 @@ class LecturesScreen extends StatelessWidget {
                       color: Colors.black45,
                       fontSize: 13.0,
                     ),
-                    item.details,
+                    item.contentWithoutLines(),
                     maxLines: 5,
                   )
                 ],

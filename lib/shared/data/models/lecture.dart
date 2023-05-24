@@ -32,4 +32,8 @@ class Lecture {
       DatabaseColumn.isFavorite.value: isFavorite,
     };
   }
+
+  String contentWithoutLines() {
+    return details.replaceAll("\n", " ");
+  }
 }
