@@ -14,16 +14,23 @@ class SearchScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 20),
-      child: TextFormField(
-        controller: _searchText,
-        onEditingComplete: () {
-          _showSearchResults(_searchText.text);
-        },
-        decoration: InputDecoration(
-          labelText: localizations.search,
-          border: const OutlineInputBorder(),
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.teal,
+        centerTitle: true,
+        title: Text(localizations.drawer_titleM),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 20),
+        child: TextFormField(
+          controller: _searchText,
+          onEditingComplete: () {
+            _showSearchResults(_searchText.text);
+          },
+          decoration: InputDecoration(
+            labelText: localizations.search,
+            border: const OutlineInputBorder(),
+          ),
         ),
       ),
     );
