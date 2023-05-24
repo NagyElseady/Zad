@@ -2,19 +2,32 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:in_app_review/in_app_review.dart';
 import 'package:share_plus/share_plus.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'package:zad/shared/localization/localizations.dart';
 
-class AboutScreen extends StatelessWidget {
-  launchURL(String url) async {
-    if (await canLaunch(url)) {
-      await launch(url);
-    } else {
-      throw 'Could not launch $url';
-    }
+import '../../shared/core/app_url.dart';
+import '../../shared/core/package_info/app_package_info.dart';
+
+class AboutScreen extends StatefulWidget {
+  const AboutScreen({super.key});
+
+  @override
+  State<AboutScreen> createState() => _AboutScreenState();
+}
+
+class _AboutScreenState extends State<AboutScreen> {
+  var appVersion = '';
+
+  @override
+  void initState() {
+    _loadAppVersion();
   }
 
-  const AboutScreen({Key? key}) : super(key: key);
+  _loadAppVersion() async {
+    final version = await AppPackageInfo.version();
+    setState(() {
+      appVersion = version;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +42,7 @@ class AboutScreen extends StatelessWidget {
         child: Column(
           children: [
             Text(localizations.title),
-            Text(localizations.issue),
+            Text(appVersion),
             const SizedBox(
               height: 50,
             ),
@@ -76,11 +89,15 @@ class AboutScreen extends StatelessWidget {
     );
   }
 
+  Future<String> _appVersion() async {
+    return await AppPackageInfo.version();
+  }
+
   Widget _shareButton(BuildContext context) {
     return ElevatedButton.icon(
       style: ElevatedButton.styleFrom(fixedSize: const Size(125, 34)),
       onPressed: () {
-        _share(context);
+        _share();
       },
       icon: const Icon(
         Icons.share_outlined,
@@ -93,16 +110,16 @@ class AboutScreen extends StatelessWidget {
     );
   }
 
-  void _share(BuildContext context) {
-    Share.share('check out my website https://example.com',
-        subject: 'Look what I made!');
+  void _share() {
+    Share.share(localizations.share_description, subject: localizations.title);
   }
 
   Widget _myApps(BuildContext context) {
     return ElevatedButton.icon(
       style: ElevatedButton.styleFrom(fixedSize: const Size(125, 34)),
       onPressed: () {
-        appUrl(context);
+        AppUrl.launch(
+            'https://play.google.com/store/apps/developer?id=IdeaS0ft&hl=en&gl=US');
       },
       icon: const Icon(
         Icons.app_registration,
@@ -115,17 +132,11 @@ class AboutScreen extends StatelessWidget {
     );
   }
 
-  void appUrl(BuildContext context) {
-    const url =
-        'https://play.google.com/store/apps/developer?id=IdeaS0ft&hl=en&gl=US';
-    launchURL(url);
-  }
-
   Widget _twitter(BuildContext context) {
     return ElevatedButton.icon(
       style: ElevatedButton.styleFrom(fixedSize: const Size(125, 34)),
       onPressed: () {
-        twitterUrl(context);
+        AppUrl.launch('https://twitter.com/IdeaS0ft');
       },
       icon: const Icon(
         FontAwesomeIcons.twitter,
@@ -138,16 +149,11 @@ class AboutScreen extends StatelessWidget {
     );
   }
 
-  void twitterUrl(BuildContext context) {
-    const url = 'https://twitter.com/IdeaS0ft';
-    launchURL(url);
-  }
-
   Widget _faceBook(BuildContext context) {
     return ElevatedButton.icon(
       style: ElevatedButton.styleFrom(fixedSize: const Size(125, 34)),
       onPressed: () {
-        faceUrl(context);
+        AppUrl.launch('https://m.facebook.com/100083952761239/');
       },
       icon: const Icon(
         Icons.facebook,
@@ -158,11 +164,6 @@ class AboutScreen extends StatelessWidget {
         localizations.face_book,
       ),
     );
-  }
-
-  void faceUrl(BuildContext context) {
-    const url = 'https://m.facebook.com/100083952761239/';
-    launchURL(url);
   }
 
   Widget _rateButton(BuildContext context) {
@@ -214,6 +215,6 @@ class AboutScreen extends StatelessWidget {
         path: 'najyelseady@gmail.com',
         queryParameters: {'subject': ''});
 
-    launch(emailLaunchUri.toString());
+    AppUrl.launchUri(emailLaunchUri);
   }
 }
