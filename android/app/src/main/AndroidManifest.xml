@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.idea.zad.zad">
+    package="com.idea.zad">
 
     <application
         android:name="${applicationName}"

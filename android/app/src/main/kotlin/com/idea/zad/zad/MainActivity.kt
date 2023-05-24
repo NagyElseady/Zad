@@ -1,4 +1,4 @@
-package com.idea.zad.zad
+package com.idea.zad
 
 import io.flutter.embedding.android.FlutterActivity
 
