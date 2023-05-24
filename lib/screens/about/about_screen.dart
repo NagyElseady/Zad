@@ -127,7 +127,7 @@ class _AboutScreenState extends State<AboutScreen> {
         color: Colors.blue,
       ),
       label: Text(
-        localizations.my_app,
+        localizations.our_apps,
       ),
     );
   }

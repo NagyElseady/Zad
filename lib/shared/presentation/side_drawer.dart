@@ -101,7 +101,7 @@ class SideDrawer extends StatelessWidget {
     final lectures = await App.context.read<LecturesBloc>().favoriteLectures();
     navigate(LecturesScreen(
       lectures: lectures,
-      title: localizations.bottom_title4,
+      title: localizations.drawer_titleN,
     ));
   }
 }

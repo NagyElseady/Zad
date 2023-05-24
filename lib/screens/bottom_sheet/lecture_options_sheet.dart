@@ -62,7 +62,7 @@ class LectureOptionsSheet extends StatelessWidget {
         Icons.favorite_border,
         size: 18,
       ),
-      label: Text(localizations.bottom_title4),
+      label: Text(localizations.drawer_titleN),
     );
   }
 
