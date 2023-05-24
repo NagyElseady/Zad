@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:zad/shared/localization/localizations.dart';
 import 'package:zad/shared/presentation/navigate_to.dart';
+import 'package:zad/shared/presentation/navigator_pop.dart';
 
 import '../../screens/about/about_screen.dart';
 import '../../screens/lectures/lectures_screen.dart';
@@ -51,6 +52,7 @@ class SideDrawer extends StatelessWidget {
               textAlign: TextAlign.right,
             ),
             onTap: () {
+              pop();
               navigate(SearchScreen());
             },
           ),
@@ -62,6 +64,7 @@ class SideDrawer extends StatelessWidget {
               textAlign: TextAlign.right,
             ),
             onTap: () {
+              pop();
               _showFavorites();
             },
           ),
@@ -73,6 +76,7 @@ class SideDrawer extends StatelessWidget {
               textAlign: TextAlign.right,
             ),
             onTap: () {
+              pop();
               navigate(const AboutScreen());
             },
           ),
@@ -84,6 +88,7 @@ class SideDrawer extends StatelessWidget {
               textAlign: TextAlign.right,
             ),
             onTap: () {
+              pop();
               navigate(const ReferencesScreen());
             },
           ),
