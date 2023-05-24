@@ -5,14 +5,6 @@ import 'package:zad/shared/localization/localizations.dart';
 class ReferencesScreen extends StatelessWidget {
   const ReferencesScreen({Key? key}) : super(key: key);
 
-  launchURL(String url) async {
-    if (await canLaunch(url)) {
-      await launch(url);
-    } else {
-      throw 'Could not launch $url';
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,7 +33,7 @@ class ReferencesScreen extends StatelessWidget {
           ElevatedButton(
               onPressed: () {
                 const url = 'http://www.islamsbudskap.com/ig/khutba/k/';
-                launchURL(url);
+                _launchURL(url);
               },
               child: Text(
                 localizations.url,
@@ -50,5 +42,14 @@ class ReferencesScreen extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  _launchURL(String url) async {
+    final uri = Uri.parse(url);
+    try {
+      await launchUrl(uri);
+    } catch (e) {
+      debugPrint(e.toString());
+    }
   }
 }
