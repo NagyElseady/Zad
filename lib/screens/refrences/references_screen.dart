@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'package:zad/shared/localization/localizations.dart';
+
+import '../../shared/core/app_url.dart';
 
 class ReferencesScreen extends StatelessWidget {
   const ReferencesScreen({Key? key}) : super(key: key);
@@ -32,8 +33,7 @@ class ReferencesScreen extends StatelessWidget {
           Text(localizations.source_syntax2),
           ElevatedButton(
               onPressed: () {
-                const url = 'http://www.islamsbudskap.com/ig/khutba/k/';
-                _launchURL(url);
+                AppUrl.launch('http://www.islamsbudskap.com/ig/khutba/k/');
               },
               child: Text(
                 localizations.url,
@@ -42,14 +42,5 @@ class ReferencesScreen extends StatelessWidget {
         ],
       ),
     );
-  }
-
-  _launchURL(String url) async {
-    final uri = Uri.parse(url);
-    try {
-      await launchUrl(uri);
-    } catch (e) {
-      debugPrint(e.toString());
-    }
   }
 }
