@@ -120,7 +120,9 @@ class ZadDatabase {
     });
 
     return title.map((e) => Lecture.from(e)).toList();
+
   }
+
 
   void updateLecture(Lecture item) async {
     final map = item.toMap();

@@ -111,7 +111,7 @@ class _AboutScreenState extends State<AboutScreen> {
   }
 
   void _share() {
-    Share.share(localizations.share_description, subject: localizations.title);
+    Share.share("https://play.google.com/store/apps/details?id=com.idea.zad");
   }
 
   Widget _myApps(BuildContext context) {

@@ -16,8 +16,8 @@ class ReferencesScreen extends StatelessWidget {
       ),
       body: Column(
         children: [
-          Column(
-            children: const [
+          const Column(
+            children: [
               Image(
                 image: AssetImage('assets/images/zad_pic.jpg'),
                 height: 100,

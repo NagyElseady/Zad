@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:zad/screens/bottom_sheet/lecture_options_sheet.dart';
 
+import '../../shared/core/lecture/lecture_screen.dart';
 import '../../shared/data/models/lecture.dart';
 import '../../shared/presentation/navigate_to.dart';
-import '../lecture/lecture_screen.dart';
 
 class LecturesScreen extends StatelessWidget {
   final List<Lecture> lectures;

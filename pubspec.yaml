@@ -54,7 +54,7 @@ dependencies:
   rxdart: ^0.27.7
   url_launcher: ^6.1.10
   in_app_review: ^2.0.6
-  flutter_localization: ^0.1.10
+  flutter_localization: ^0.1.14
   intl_utils: ^2.8.1
   share_plus: ^6.3.1
   flutter_email_sender: ^5.2.0
@@ -68,6 +68,7 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   intl: any
+  localization: ^2.1.0
 
 dev_dependencies:
   flutter_test:

@@ -8,6 +8,7 @@ import '../shared/data/models/section.dart';
 import '../shared/localization/localizations.dart';
 import '../shared/presentation/navigate_to.dart';
 
+// ignore: must_be_immutable
 class SectionsScreen extends StatelessWidget {
   SectionsScreen({Key? key}) : super(key: key);
 

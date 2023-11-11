@@ -7,6 +7,7 @@ import '../../shared/app/app.dart';
 import '../../shared/data/models/lecture.dart';
 import '../../shared/presentation/controller/lectures_bloc.dart';
 
+// ignore: must_be_immutable
 class EditLectureScreen extends StatefulWidget {
   Lecture lecture;
 

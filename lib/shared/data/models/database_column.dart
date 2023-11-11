@@ -13,6 +13,7 @@ enum DatabaseColumn {
     return [
       id.value,
       title.value,
+      title.value,
       details.value,
       categoryId.value,
       isFavorite.value,
